@@ -15,12 +15,17 @@ struct ShoppingListView: View {
     }
 
     var body: some View {
-        ZStack {
-            Text(shoppingList.name)
+        VStack {
+            Text(shoppingList.name).padding()
+            List(shoppingList.entries, id: \.id) { entry in
+                Toggle(isOn: .constant(false), label: {
+                    Text(entry.content)
+                })
+            }
         }
     }
 }
 
 #Preview {
-    ShoppingListView(of: Mocks.shoppingLists[0])
+    ShoppingListView(of: Mocks.shoppingList)
 }

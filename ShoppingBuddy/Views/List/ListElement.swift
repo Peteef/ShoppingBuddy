@@ -23,5 +23,5 @@ struct ListElement: View {
 }
 
 #Preview {
-    ListElement(of: Mocks.shoppingLists[0])
+    ListElement(of: Mocks.shoppingList)
 }
