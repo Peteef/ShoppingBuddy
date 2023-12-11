@@ -10,11 +10,8 @@ import SwiftUI
 struct ListElement: View {
     let shoppingList: ShoppingList
 
-    @Binding var selectedList: ShoppingList?
-
-    init(shoppingList: ShoppingList, selectedList: Binding<ShoppingList?>) {
-        self.shoppingList = shoppingList
-        self._selectedList = selectedList
+    init(of: ShoppingList) {
+        self.shoppingList = of
     }
 
     var body: some View {
@@ -22,12 +19,9 @@ struct ListElement: View {
             Text(shoppingList.name)
         }
         .padding(.vertical, 10)
-        .onTapGesture {
-            selectedList = shoppingList
-        }
     }
 }
 
 #Preview {
-    ListElement(shoppingList: Mocks.shoppingLists[0], selectedList: .constant(nil))
+    ListElement(of: Mocks.shoppingLists[0])
 }

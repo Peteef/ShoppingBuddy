@@ -15,7 +15,9 @@ struct ShoppingListView: View {
     }
 
     var body: some View {
-        Text(shoppingList.name)
+        ZStack {
+            Text(shoppingList.name)
+        }
     }
 }
 

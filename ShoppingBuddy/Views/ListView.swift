@@ -10,13 +10,15 @@ import SwiftUI
 struct ListView: View {
     @StateObject var viewModel: ListViewModel
 
-    @State private var selectedList: ShoppingList? = nil
-
     var body: some View {
         ZStack {
             NavigationStack {
                 List(viewModel.shoppingLists, id: \.id) { shoppingList in
-                    ListElement(shoppingList: shoppingList, selectedList: $selectedList)
+                    NavigationLink {
+                        ShoppingListView(of: shoppingList)
+                    } label: {
+                        ListElement(of: shoppingList)
+                    }
                 }
                 .navigationTitle("🛒 ShoppingBuddy")
             }
@@ -26,10 +28,6 @@ struct ListView: View {
 
             if viewModel.isLoading {
                 LoadingView()
-            }
-
-            if selectedList != nil {
-                ShoppingListView(of: selectedList!)
             }
         }
     }
