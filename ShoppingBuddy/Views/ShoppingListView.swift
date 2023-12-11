@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ShoppingListView: View {
     let shoppingList: ShoppingList
-    
+
     init(of: ShoppingList) {
         self.shoppingList = of
     }
-    
+
     var body: some View {
         Text(shoppingList.name)
     }

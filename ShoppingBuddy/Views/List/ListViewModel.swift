@@ -10,7 +10,7 @@ import Foundation
 final class ListViewModel: ObservableObject {
     @Published var shoppingLists: [ShoppingList] = []
     @Published var isLoading: Bool = false
-    
+
     func load() {
         isLoading = true
         // TODO: Implement fetching

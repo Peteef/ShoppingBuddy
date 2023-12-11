@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ListElement: View {
     let shoppingList: ShoppingList
-    
+
     @Binding var selectedList: ShoppingList?
-    
+
     init(shoppingList: ShoppingList, selectedList: Binding<ShoppingList?>) {
         self.shoppingList = shoppingList
         self._selectedList = selectedList
     }
-    
+
     var body: some View {
         HStack {
             Text(shoppingList.name)

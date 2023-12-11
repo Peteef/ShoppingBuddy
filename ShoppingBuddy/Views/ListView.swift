@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ListView: View {
-    
     @StateObject var viewModel: ListViewModel
-    
+
     @State private var selectedList: ShoppingList? = nil
-    
+
     var body: some View {
         ZStack {
             NavigationStack {
@@ -24,11 +23,11 @@ struct ListView: View {
             .onAppear {
                 viewModel.load()
             }
-            
+
             if viewModel.isLoading {
                 LoadingView()
             }
-            
+
             if selectedList != nil {
                 ShoppingListView(of: selectedList!)
             }
