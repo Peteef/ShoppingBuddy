@@ -10,8 +10,11 @@ import SwiftUI
 struct ListElement: View {
     let shoppingList: ShoppingList
     
-    init(of: ShoppingList) {
-        self.shoppingList = of
+    @Binding var selectedList: ShoppingList?
+    
+    init(shoppingList: ShoppingList, selectedList: Binding<ShoppingList?>) {
+        self.shoppingList = shoppingList
+        self._selectedList = selectedList
     }
     
     var body: some View {
@@ -20,11 +23,11 @@ struct ListElement: View {
         }
         .padding(.vertical, 10)
         .onTapGesture {
-            print(shoppingList.id) // TODO: Implement navigation
+            selectedList = shoppingList
         }
     }
 }
 
 #Preview {
-    ListElement(of: Mocks.shoppingLists[0])
+    ListElement(shoppingList: Mocks.shoppingLists[0], selectedList: .constant(nil))
 }

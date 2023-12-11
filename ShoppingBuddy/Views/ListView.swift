@@ -8,16 +8,34 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    @StateObject var viewModel: ListViewModel
+    
+    @State private var selectedList: ShoppingList? = nil
+    
     var body: some View {
-        NavigationStack {
-            List(Mocks.shoppingLists, id: \.id) { shoppingList in
-                ListElement(of: shoppingList)
+        ZStack {
+            NavigationStack {
+                List(viewModel.shoppingLists, id: \.id) { shoppingList in
+                    ListElement(shoppingList: shoppingList, selectedList: $selectedList)
+                }
+                .navigationTitle("🛒 ShoppingBuddy")
             }
-            .navigationTitle("🛒 ShoppingBuddy")
+            .onAppear {
+                viewModel.load()
+            }
+            
+            if viewModel.isLoading {
+                LoadingView()
+            }
+            
+            if selectedList != nil {
+                ShoppingListView(of: selectedList!)
+            }
         }
     }
 }
 
 #Preview {
-    ListView()
+    ListView(viewModel: ListViewModel())
 }
