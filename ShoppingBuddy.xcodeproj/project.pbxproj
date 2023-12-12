@@ -102,9 +102,7 @@
 			children = (
 				8BD7EA012B27D893007B2FA5 /* ShoppingList */,
 				8BD7E9F02B267FE4007B2FA5 /* List */,
-				8BD7E9F32B268797007B2FA5 /* ShoppingListView.swift */,
 				8BD7E9D72B265962007B2FA5 /* MainView.swift */,
-				8BD7E9E92B267038007B2FA5 /* ListView.swift */,
 				8BD7E9F72B268CD0007B2FA5 /* LoadingView.swift */,
 			);
 			path = Views;
@@ -121,6 +119,7 @@
 		8BD7E9F02B267FE4007B2FA5 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				8BD7E9E92B267038007B2FA5 /* ListView.swift */,
 				8BD7E9F12B26800D007B2FA5 /* ListElement.swift */,
 				8BD7E9F52B268A9E007B2FA5 /* ListViewModel.swift */,
 			);
@@ -148,6 +147,7 @@
 		8BD7EA012B27D893007B2FA5 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				8BD7E9F32B268797007B2FA5 /* ShoppingListView.swift */,
 				8BD7EA022B27D8E9007B2FA5 /* ShoppingListViewModel.swift */,
 			);
 			path = ShoppingList;

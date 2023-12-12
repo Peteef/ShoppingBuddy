@@ -11,12 +11,14 @@ struct ShoppingList {
     let id: String
     let name: String
     var entries: [ListEntry]
-    
+
     init(id: String, name: String, entries: [ListEntry] = []) {
         self.id = id
         self.name = name
         self.entries = entries
     }
+
+    public static let none: ShoppingList = .init(id: "none", name: "none", entries: [])
 }
 
 struct ListEntry {

@@ -8,7 +8,7 @@
 import Foundation
 
 class InMemoryShoppingListRepository: ShoppingListRepository {
-    private var data: Dictionary<String, ShoppingList> = [:]
+    private var data: [String: ShoppingList] = [:]
     
     init() {
         Mocks.shoppingLists.forEach { shoppingList in
@@ -39,6 +39,4 @@ class InMemoryShoppingListRepository: ShoppingListRepository {
         }
         data[id] = shoppingList
     }
-    
-    
 }

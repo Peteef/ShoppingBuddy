@@ -9,22 +9,26 @@ import Foundation
 
 final class ShoppingListViewModel: ObservableObject {
     private let repository: ShoppingListRepository = InMemoryRepository.shoppingListRepository
-    
+
     @Published var shoppingList: ShoppingList
-    
+    @Published var isError: Bool = false
+
     init(of: ShoppingList) {
-        // TODO: Use optional value and handle absence
-        self.shoppingList = repository.get(id: of.id) ?? Mocks.shoppingLists[2]
+        if let fromRepository = repository.get(id: of.id) {
+            self.shoppingList = fromRepository
+        } else {
+            self.shoppingList = ShoppingList.none
+            self.isError = true
+        }
     }
-    
+
     func update() {
         do {
             try repository.update(shoppingList: shoppingList)
-        } catch ShoppingListError.alreadyExist(let withId) {
+        } catch let ShoppingListError.alreadyExist(withId) {
             print("Shopping list with id: \(withId) does not exist!")
         } catch {
             print("Something went wrong.")
         }
     }
-
 }

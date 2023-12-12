@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct InMemoryRepository {
+enum InMemoryRepository {
     public static let shoppingListRepository: ShoppingListRepository = InMemoryShoppingListRepository()
 }
