@@ -15,7 +15,7 @@ struct ListView: View {
             NavigationStack {
                 List(viewModel.shoppingLists, id: \.id) { shoppingList in
                     NavigationLink {
-                        ShoppingListView(of: shoppingList)
+                        ShoppingListView(viewModel: ShoppingListViewModel(of: shoppingList))
                     } label: {
                         ListElement(of: shoppingList)
                     }

@@ -8,13 +8,14 @@
 import Foundation
 
 final class ListViewModel: ObservableObject {
+    private let repository: ShoppingListRepository = InMemoryRepository.shoppingListRepository
+
     @Published var shoppingLists: [ShoppingList] = []
     @Published var isLoading: Bool = false
 
     func load() {
         isLoading = true
-        // TODO: Implement fetching
-        shoppingLists = Mocks.shoppingLists
+        shoppingLists = repository.getAll()
         isLoading = false
     }
 }

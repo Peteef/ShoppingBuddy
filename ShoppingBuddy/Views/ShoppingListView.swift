@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct ShoppingListView: View {
-    let shoppingList: ShoppingList
-
-    init(of: ShoppingList) {
-        self.shoppingList = of
-    }
+    @StateObject var viewModel: ShoppingListViewModel
 
     var body: some View {
         VStack {
-            Text(shoppingList.name).padding()
-            List(shoppingList.entries, id: \.id) { entry in
-                Toggle(isOn: .constant(false), label: {
-                    Text(entry.content)
-                })
+            Text(viewModel.shoppingList.name).padding()
+            List($viewModel.shoppingList.entries, id: \.id) { entry in
+                Toggle(isOn: entry.checked, label: {
+                    Text(entry.wrappedValue.content)
+                }).onChange(of: entry.wrappedValue.checked) {
+                    viewModel.update()
+                }
             }
         }
     }
 }
 
 #Preview {
-    ShoppingListView(of: Mocks.shoppingList)
+    ShoppingListView(viewModel: ShoppingListViewModel(of: Mocks.shoppingList))
 }

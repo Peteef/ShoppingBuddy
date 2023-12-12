@@ -10,7 +10,7 @@ import Foundation
 struct ShoppingList {
     let id: String
     let name: String
-    let entries: [ListEntry]
+    var entries: [ListEntry]
     
     init(id: String, name: String, entries: [ListEntry] = []) {
         self.id = id
@@ -22,5 +22,5 @@ struct ShoppingList {
 struct ListEntry {
     let id: String
     let content: String
-    let checked: Bool
+    var checked: Bool
 }
