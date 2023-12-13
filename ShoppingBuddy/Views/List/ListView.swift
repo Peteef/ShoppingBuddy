@@ -34,6 +34,12 @@ struct ListView: View {
             .onAppear {
                 viewModel.load()
             }
+            .onChange(of: viewModel.isOpenNewListView) {
+                if !viewModel.isOpenNewListView {
+                    print("onChange")
+                    viewModel.load()
+                }
+            }
 
             if viewModel.isLoading {
                 LoadingView()

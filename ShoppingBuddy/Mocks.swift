@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct Mocks {
-    static let shoppingList: ShoppingList = ShoppingList(
-        id: NSUUID().uuidString.lowercased(),
+enum Mocks {
+    static let shoppingList: ShoppingList = .init(
         name: "Kamil's list",
         entries: [
             ListEntry(id: NSUUID().uuidString.lowercased(), content: "Eggs", checked: false),
@@ -18,14 +17,13 @@ struct Mocks {
         ],
         createdAt: Calendar.current.date(byAdding: .day, value: -1, to: Date())!
     )
-    
+
     static let shoppingLists: [ShoppingList] = [
         shoppingList,
-        ShoppingList(id: NSUUID().uuidString.lowercased(), name: "Kasia's list"),
-        ShoppingList(id: NSUUID().uuidString.lowercased(), name: "Home list"),
-        ShoppingList(id: NSUUID().uuidString.lowercased(), name: "Birthday list"),
-        ShoppingList(id: NSUUID().uuidString.lowercased(), name: "Party list"),
-        ShoppingList(id: NSUUID().uuidString.lowercased(), name: "Travel list")
+        ShoppingList(name: "Kasia's list"),
+        ShoppingList(name: "Home list"),
+        ShoppingList(name: "Birthday list"),
+        ShoppingList(name: "Party list"),
+        ShoppingList(name: "Travel list")
     ]
 }
-

@@ -13,7 +13,7 @@ struct ShoppingList: Identifiable {
     var entries: [ListEntry]
     let createdAt: Date
 
-    init(id: String, name: String, entries: [ListEntry] = [], createdAt: Date = Date.now) {
+    init(id: String = NSUUID().uuidString.lowercased(), name: String, entries: [ListEntry] = [], createdAt: Date = Date.now) {
         self.id = id
         self.name = name
         self.entries = entries

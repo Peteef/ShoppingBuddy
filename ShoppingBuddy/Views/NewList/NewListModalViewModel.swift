@@ -8,6 +8,8 @@
 import Foundation
 
 final class NewListModalViewModel: ObservableObject {
+    private let repository: ShoppingListRepository = InMemoryRepository.shoppingListRepository
+
     @Published var name: String = ""
     @Published var showAlert: Bool = false
 
@@ -16,6 +18,11 @@ final class NewListModalViewModel: ObservableObject {
     }
 
     func addNewList() {
-        print("Add \(name)")
+        // TODO: Add better error handling here
+        guard canAdd else {
+            return
+        }
+
+        try? repository.add(shoppingList: ShoppingList(name: name.trimmingCharacters(in: .whitespaces)))
     }
 }
