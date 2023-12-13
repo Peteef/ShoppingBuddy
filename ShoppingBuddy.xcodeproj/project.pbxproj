@@ -23,6 +23,8 @@
 		8BD7E9FF2B27D562007B2FA5 /* ShoppingListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9FE2B27D562007B2FA5 /* ShoppingListError.swift */; };
 		8BD7EA032B27D8E9007B2FA5 /* ShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA022B27D8E9007B2FA5 /* ShoppingListViewModel.swift */; };
 		8BD7EA052B27F896007B2FA5 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA042B27F896007B2FA5 /* InMemoryRepository.swift */; };
+		8BD7EA082B293471007B2FA5 /* NewListModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA072B293471007B2FA5 /* NewListModalView.swift */; };
+		8BD7EA0A2B2934E0007B2FA5 /* NewListModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA092B2934E0007B2FA5 /* NewListModalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		8BD7E9FE2B27D562007B2FA5 /* ShoppingListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListError.swift; sourceTree = "<group>"; };
 		8BD7EA022B27D8E9007B2FA5 /* ShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModel.swift; sourceTree = "<group>"; };
 		8BD7EA042B27F896007B2FA5 /* InMemoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
+		8BD7EA072B293471007B2FA5 /* NewListModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListModalView.swift; sourceTree = "<group>"; };
+		8BD7EA092B2934E0007B2FA5 /* NewListModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListModalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		8BD7E9E42B266131007B2FA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BD7EA062B29345B007B2FA5 /* NewList */,
 				8BD7EA012B27D893007B2FA5 /* ShoppingList */,
 				8BD7E9F02B267FE4007B2FA5 /* List */,
 				8BD7E9D72B265962007B2FA5 /* MainView.swift */,
@@ -151,6 +156,15 @@
 				8BD7EA022B27D8E9007B2FA5 /* ShoppingListViewModel.swift */,
 			);
 			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		8BD7EA062B29345B007B2FA5 /* NewList */ = {
+			isa = PBXGroup;
+			children = (
+				8BD7EA072B293471007B2FA5 /* NewListModalView.swift */,
+				8BD7EA092B2934E0007B2FA5 /* NewListModalViewModel.swift */,
+			);
+			path = NewList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,8 +239,10 @@
 			files = (
 				8BD7E9FF2B27D562007B2FA5 /* ShoppingListError.swift in Sources */,
 				8BD7E9EA2B267038007B2FA5 /* ListView.swift in Sources */,
+				8BD7EA082B293471007B2FA5 /* NewListModalView.swift in Sources */,
 				8BD7E9FB2B27D03B007B2FA5 /* ShoppingListRepository.swift in Sources */,
 				8BD7E9FD2B27D109007B2FA5 /* InMemoryShoppingListRepository.swift in Sources */,
+				8BD7EA0A2B2934E0007B2FA5 /* NewListModalViewModel.swift in Sources */,
 				8BD7E9F42B268797007B2FA5 /* ShoppingListView.swift in Sources */,
 				8BD7E9EF2B26721D007B2FA5 /* ShoppingList.swift in Sources */,
 				8BD7E9F22B26800D007B2FA5 /* ListElement.swift in Sources */,

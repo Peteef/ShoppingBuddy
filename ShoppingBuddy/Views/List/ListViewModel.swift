@@ -13,6 +13,8 @@ final class ListViewModel: ObservableObject {
     @Published var shoppingLists: [ShoppingList] = []
     @Published var isLoading: Bool = false
 
+    @Published var isOpenNewListView: Bool = false
+
     func load() {
         isLoading = true
         shoppingLists = repository.getAll()

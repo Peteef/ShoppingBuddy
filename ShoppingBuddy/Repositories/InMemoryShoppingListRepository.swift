@@ -17,7 +17,9 @@ class InMemoryShoppingListRepository: ShoppingListRepository {
     }
     
     func getAll() -> [ShoppingList] {
-        Array(data.values)
+        Array(data.values).sorted {
+            $0.createdAt > $1.createdAt
+        }
     }
     
     func get(id: String) -> ShoppingList? {

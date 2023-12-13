@@ -13,14 +13,23 @@ struct ListView: View {
     var body: some View {
         ZStack {
             NavigationStack {
-                List(viewModel.shoppingLists, id: \.id) { shoppingList in
-                    NavigationLink {
-                        ShoppingListView(viewModel: ShoppingListViewModel(of: shoppingList))
-                    } label: {
-                        ListElement(of: shoppingList)
+                List {
+                    ForEach(viewModel.shoppingLists, id: \.id) { shoppingList in
+                        NavigationLink {
+                            ShoppingListView(viewModel: ShoppingListViewModel(of: shoppingList))
+                        } label: {
+                            ListElement(of: shoppingList)
+                        }
                     }
+                    Button("Create list", systemImage: "plus.circle") {
+                        viewModel.isOpenNewListView = true
+                    }
+                    .padding(.vertical, 10)
                 }
                 .navigationTitle("🛒 ShoppingBuddy")
+                .sheet(isPresented: $viewModel.isOpenNewListView, content: {
+                    NewListModalView(viewModel: NewListModalViewModel(), isOpen: $viewModel.isOpenNewListView)
+                })
             }
             .onAppear {
                 viewModel.load()

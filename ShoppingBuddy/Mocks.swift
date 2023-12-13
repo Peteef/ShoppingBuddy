@@ -15,7 +15,8 @@ struct Mocks {
             ListEntry(id: NSUUID().uuidString.lowercased(), content: "Eggs", checked: false),
             ListEntry(id: NSUUID().uuidString.lowercased(), content: "Milk", checked: false),
             ListEntry(id: NSUUID().uuidString.lowercased(), content: "Bread", checked: false)
-        ]
+        ],
+        createdAt: Calendar.current.date(byAdding: .day, value: -1, to: Date())!
     )
     
     static let shoppingLists: [ShoppingList] = [

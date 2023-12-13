@@ -7,18 +7,20 @@
 
 import Foundation
 
-struct ShoppingList {
+struct ShoppingList: Identifiable {
     let id: String
     let name: String
     var entries: [ListEntry]
+    let createdAt: Date
 
-    init(id: String, name: String, entries: [ListEntry] = []) {
+    init(id: String, name: String, entries: [ListEntry] = [], createdAt: Date = Date.now) {
         self.id = id
         self.name = name
         self.entries = entries
+        self.createdAt = createdAt
     }
 
-    public static let none: ShoppingList = .init(id: "none", name: "none", entries: [])
+    public static let none: ShoppingList = .init(id: "none", name: "none", entries: [], createdAt: Date.distantPast)
 }
 
 struct ListEntry {

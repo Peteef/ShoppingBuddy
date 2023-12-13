@@ -13,7 +13,7 @@ struct ShoppingListView: View {
     var body: some View {
         if !viewModel.isError {
             VStack {
-                Text(viewModel.shoppingList.name).padding()
+                Text(viewModel.shoppingList.name)
                 List($viewModel.shoppingList.entries, id: \.id) { entry in
                     Toggle(isOn: entry.checked, label: {
                         Text(entry.wrappedValue.content)
