@@ -11,6 +11,8 @@ struct NewListModalView: View {
     @StateObject var viewModel: NewListModalViewModel
     @Binding var isOpen: Bool
 
+    @FocusState private var focusedNamTextField: Bool
+
     var body: some View {
         VStack {
             Spacer()
@@ -18,6 +20,7 @@ struct NewListModalView: View {
                 .padding(.all, 15)
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
+                .focused($focusedNamTextField)
             Button("Create") {
                 if viewModel.canAdd {
                     viewModel.addNewList()
@@ -33,6 +36,9 @@ struct NewListModalView: View {
         .presentationDetents([.height(180)])
         .presentationDragIndicator(.visible)
         .presentationBackground(Color(.systemGray3))
+        .onAppear {
+            focusedNamTextField = true
+        }
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text("Error"), message: Text("List name cannot be empty!"))
         }
