@@ -10,10 +10,10 @@ import Foundation
 enum Mocks {
     static let shoppingList: ShoppingList = .init(
         name: "Kamil's list",
-        entries: [
-            ListEntry(id: NSUUID().uuidString.lowercased(), content: "Eggs", checked: false),
-            ListEntry(id: NSUUID().uuidString.lowercased(), content: "Milk", checked: false),
-            ListEntry(id: NSUUID().uuidString.lowercased(), content: "Bread", checked: false)
+        items: [
+            ListItem(content: "Eggs"),
+            ListItem(content: "Milk"),
+            ListItem(content: "Bread")
         ],
         createdAt: Calendar.current.date(byAdding: .day, value: -1, to: Date())!
     )

@@ -10,21 +10,27 @@ import Foundation
 struct ShoppingList: Identifiable {
     let id: String
     let name: String
-    var entries: [ListEntry]
+    var items: [ListItem]
     let createdAt: Date
 
-    init(id: String = NSUUID().uuidString.lowercased(), name: String, entries: [ListEntry] = [], createdAt: Date = Date.now) {
+    init(id: String = NSUUID().uuidString.lowercased(), name: String, items: [ListItem] = [], createdAt: Date = Date.now) {
         self.id = id
         self.name = name
-        self.entries = entries
+        self.items = items
         self.createdAt = createdAt
     }
 
-    public static let none: ShoppingList = .init(id: "none", name: "none", entries: [], createdAt: Date.distantPast)
+    public static let none: ShoppingList = .init(id: "none", name: "none", items: [], createdAt: Date.distantPast)
 }
 
-struct ListEntry {
+struct ListItem {
     let id: String
     let content: String
     var checked: Bool
+    
+    init(id: String = NSUUID().uuidString.lowercased(), content: String, checked: Bool = false) {
+        self.id = id
+        self.content = content
+        self.checked = checked
+    }
 }

@@ -36,7 +36,6 @@ struct ListView: View {
             }
             .onChange(of: viewModel.isOpenNewListView) {
                 if !viewModel.isOpenNewListView {
-                    print("onChange")
                     viewModel.load()
                 }
             }

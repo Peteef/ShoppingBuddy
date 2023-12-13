@@ -14,14 +14,27 @@ struct ShoppingListView: View {
         if !viewModel.isError {
             VStack {
                 Text(viewModel.shoppingList.name)
-                List($viewModel.shoppingList.entries, id: \.id) { entry in
-                    Toggle(isOn: entry.checked, label: {
-                        Text(entry.wrappedValue.content)
-                    }).onChange(of: entry.wrappedValue.checked) {
+                List($viewModel.shoppingList.items, id: \.id) { item in
+                    Toggle(isOn: item.checked, label: {
+                        Text(item.wrappedValue.content)
+                    }).onChange(of: item.wrappedValue.checked) {
                         viewModel.update()
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add item") {
+                        viewModel.isOpenNewItemView = true
+                    }
+                }
+            }
+            .sheet(isPresented: $viewModel.isOpenNewItemView, content: {
+                NewItemModalView(
+                    viewModel: NewItemModalViewModel(shoppingList: $viewModel.shoppingList),
+                    isOpen: $viewModel.isOpenNewItemView
+                )
+            })
         }
     }
 }

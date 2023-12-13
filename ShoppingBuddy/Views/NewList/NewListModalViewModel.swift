@@ -24,5 +24,10 @@ final class NewListModalViewModel: ObservableObject {
         }
 
         try? repository.add(shoppingList: ShoppingList(name: name.trimmingCharacters(in: .whitespaces)))
+        reset()
+    }
+    
+    func reset() {
+        name = ""
     }
 }
