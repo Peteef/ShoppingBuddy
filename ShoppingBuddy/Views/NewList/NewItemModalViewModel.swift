@@ -10,12 +10,14 @@ import SwiftUI
 
 final class NewItemModalViewModel: ObservableObject {
     @Binding var shoppingList: ShoppingList
+    let onUpdate: () -> Void
     
     @Published var content: String = ""
     @Published var showAlert: Bool = false
     
-    init(shoppingList: Binding<ShoppingList>) {
+    init(shoppingList: Binding<ShoppingList>, onUpdate: @escaping () -> Void) {
         self._shoppingList = shoppingList
+        self.onUpdate = onUpdate
     }
     
     var canAdd: Bool {
@@ -29,6 +31,7 @@ final class NewItemModalViewModel: ObservableObject {
         }
         
         shoppingList.items.append(ListItem(content: content))
+        onUpdate()
         reset()
     }
     

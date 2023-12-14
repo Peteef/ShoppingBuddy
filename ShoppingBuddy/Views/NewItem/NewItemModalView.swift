@@ -46,5 +46,5 @@ struct NewItemModalView: View {
 }
 
 #Preview {
-    NewItemModalView(viewModel: NewItemModalViewModel(shoppingList: .constant(Mocks.shoppingList)), isOpen: .constant(true))
+    NewItemModalView(viewModel: NewItemModalViewModel(shoppingList: .constant(Mocks.shoppingList), onUpdate: {}), isOpen: .constant(true))
 }

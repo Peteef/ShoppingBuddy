@@ -31,7 +31,10 @@ struct ShoppingListView: View {
             }
             .sheet(isPresented: $viewModel.isOpenNewItemView, content: {
                 NewItemModalView(
-                    viewModel: NewItemModalViewModel(shoppingList: $viewModel.shoppingList),
+                    viewModel: NewItemModalViewModel(
+                        shoppingList: $viewModel.shoppingList,
+                        onUpdate: viewModel.update
+                    ),
                     isOpen: $viewModel.isOpenNewItemView
                 )
             })
