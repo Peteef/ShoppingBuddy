@@ -11,16 +11,16 @@ struct NewListModalView: View {
     @StateObject var viewModel: NewListModalViewModel
     @Binding var isOpen: Bool
 
-    @FocusState private var focusedNamTextField: Bool
+    @FocusState private var focusedNameTextField: Bool
 
     var body: some View {
         VStack {
             Spacer()
             TextField("Type a list name...", text: $viewModel.name)
-                .padding(.all, 15)
+                .padding(.all, 16)
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
-                .focused($focusedNamTextField)
+                .focused($focusedNameTextField)
             Button("Create") {
                 if viewModel.canAdd {
                     viewModel.addNewList()
@@ -29,7 +29,7 @@ struct NewListModalView: View {
                     viewModel.showAlert = true
                 }
             }
-            .padding(.all, 15)
+            .padding(.all, 16)
             .buttonStyle(.borderedProminent)
             Spacer()
         }
@@ -37,7 +37,7 @@ struct NewListModalView: View {
         .presentationDragIndicator(.visible)
         .presentationBackground(Color(.systemGray3))
         .onAppear {
-            focusedNamTextField = true
+            focusedNameTextField = true
         }
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text("Error"), message: Text("List name cannot be empty!"))

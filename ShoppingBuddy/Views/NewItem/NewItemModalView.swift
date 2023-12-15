@@ -11,16 +11,16 @@ struct NewItemModalView: View {
     @StateObject var viewModel: NewItemModalViewModel
     @Binding var isOpen: Bool
 
-    @FocusState private var focusedNamTextField: Bool
+    @FocusState private var focusedContentTextField: Bool
 
     var body: some View {
         VStack {
             Spacer()
             TextField("What do you want to add?", text: $viewModel.content)
-                .padding(.all, 15)
+                .padding(.all, 16)
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
-                .focused($focusedNamTextField)
+                .focused($focusedContentTextField)
             Button("Create") {
                 if viewModel.canAdd {
                     viewModel.addNewItem()
@@ -29,7 +29,7 @@ struct NewItemModalView: View {
                     viewModel.showAlert = true
                 }
             }
-            .padding(.all, 15)
+            .padding(.all, 16)
             .buttonStyle(.borderedProminent)
             Spacer()
         }
@@ -37,7 +37,7 @@ struct NewItemModalView: View {
         .presentationDragIndicator(.visible)
         .presentationBackground(Color(.systemGray3))
         .onAppear {
-            focusedNamTextField = true
+            focusedContentTextField = true
         }
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text("Error"), message: Text("Item cannot be empty!"))

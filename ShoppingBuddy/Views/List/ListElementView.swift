@@ -18,7 +18,7 @@ struct ListElementView: View {
         HStack {
             Text(shoppingList.name)
         }
-        .padding(.vertical, 10)
+        .padding(.vertical, 8)
     }
 }
 

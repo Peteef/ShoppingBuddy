@@ -11,7 +11,7 @@ struct ListView: View {
     @StateObject var viewModel: ListViewModel
 
     var body: some View {
-        ZStack {
+        VStack {
             NavigationStack {
                 List {
                     ForEach(viewModel.shoppingLists, id: \.id) { shoppingList in
@@ -25,8 +25,9 @@ struct ListView: View {
                     Button("Create list", systemImage: "plus.circle") {
                         viewModel.isOpenNewListModal = true
                     }
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 8)
                 }
+                .listRowSpacing(16)
                 .navigationTitle("🛒 ShoppingBuddy")
                 .sheet(isPresented: $viewModel.isOpenNewListModal, content: {
                     NewListModalView(viewModel: NewListModalViewModel(), isOpen: $viewModel.isOpenNewListModal)

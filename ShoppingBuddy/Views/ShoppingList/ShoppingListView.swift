@@ -13,14 +13,21 @@ struct ShoppingListView: View {
     var body: some View {
         if !viewModel.isError {
             VStack {
-                Text(viewModel.shoppingList.name)
+                HStack {
+                    Text(viewModel.shoppingList.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal)
+                    Spacer()
+                }
                 List {
                     ForEach($viewModel.shoppingList.items, id: \.id) { item in
                         ShoppingListItemView(item: item, onToggle: viewModel.update)
                     }
                     .onMove(perform: viewModel.moveItems)
                     .onDelete(perform: viewModel.removeItems)
-                }
+                }.listStyle(.plain)
             }
             .toolbar {
                 AddItemButton(isOpenModal: $viewModel.isOpenNewItemModal)
