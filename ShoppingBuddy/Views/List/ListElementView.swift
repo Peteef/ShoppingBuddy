@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListElement: View {
+struct ListElementView: View {
     let shoppingList: ShoppingList
 
     init(of: ShoppingList) {
@@ -23,5 +23,5 @@ struct ListElement: View {
 }
 
 #Preview {
-    ListElement(of: Mocks.shoppingList)
+    ListElementView(of: Mocks.shoppingList)
 }

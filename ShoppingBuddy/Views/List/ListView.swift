@@ -18,25 +18,25 @@ struct ListView: View {
                         NavigationLink {
                             ShoppingListView(viewModel: ShoppingListViewModel(of: shoppingList))
                         } label: {
-                            ListElement(of: shoppingList)
+                            ListElementView(of: shoppingList)
                         }
                     }
                     .onDelete(perform: viewModel.removeList)
                     Button("Create list", systemImage: "plus.circle") {
-                        viewModel.isOpenNewListView = true
+                        viewModel.isOpenNewListModal = true
                     }
                     .padding(.vertical, 10)
                 }
                 .navigationTitle("🛒 ShoppingBuddy")
-                .sheet(isPresented: $viewModel.isOpenNewListView, content: {
-                    NewListModalView(viewModel: NewListModalViewModel(), isOpen: $viewModel.isOpenNewListView)
+                .sheet(isPresented: $viewModel.isOpenNewListModal, content: {
+                    NewListModalView(viewModel: NewListModalViewModel(), isOpen: $viewModel.isOpenNewListModal)
                 })
             }
             .onAppear {
                 viewModel.load()
             }
-            .onChange(of: viewModel.isOpenNewListView) {
-                if !viewModel.isOpenNewListView {
+            .onChange(of: viewModel.isOpenNewListModal) {
+                if !viewModel.isOpenNewListModal {
                     viewModel.load()
                 }
             }

@@ -13,7 +13,7 @@ final class ListViewModel: ObservableObject {
     @Published var shoppingLists: [ShoppingList] = []
     @Published var isLoading: Bool = false
 
-    @Published var isOpenNewListView: Bool = false
+    @Published var isOpenNewListModal: Bool = false
 
     func load() {
         isLoading = true

@@ -16,30 +16,22 @@ struct ShoppingListView: View {
                 Text(viewModel.shoppingList.name)
                 List {
                     ForEach($viewModel.shoppingList.items, id: \.id) { item in
-                        Toggle(isOn: item.checked, label: {
-                            Text(item.wrappedValue.content)
-                        }).onChange(of: item.wrappedValue.checked) {
-                            viewModel.update()
-                        }
+                        ShoppingListItemView(item: item, onToggle: viewModel.update)
                     }
                     .onMove(perform: viewModel.moveItems)
                     .onDelete(perform: viewModel.removeItems)
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add item") {
-                        viewModel.isOpenNewItemView = true
-                    }
-                }
+                AddItemButton(isOpenModal: $viewModel.isOpenNewItemModal)
             }
-            .sheet(isPresented: $viewModel.isOpenNewItemView, content: {
+            .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {
                 NewItemModalView(
                     viewModel: NewItemModalViewModel(
                         shoppingList: $viewModel.shoppingList,
                         onUpdate: viewModel.update
                     ),
-                    isOpen: $viewModel.isOpenNewItemView
+                    isOpen: $viewModel.isOpenNewItemModal
                 )
             })
         }

@@ -8,10 +8,12 @@
 import Foundation
 
 enum Mocks {
+    static let item: ListItem = .init(content: "Eggs")
+    
     static let shoppingList: ShoppingList = .init(
         name: "Kamil's list",
         items: [
-            ListItem(content: "Eggs"),
+            item,
             ListItem(content: "Milk"),
             ListItem(content: "Bread")
         ],
