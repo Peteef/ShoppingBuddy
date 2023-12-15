@@ -30,7 +30,7 @@ final class NewItemModalViewModel: ObservableObject {
             return
         }
         
-        shoppingList.items.append(ListItem(content: content))
+        shoppingList.items.append(ListItem(content: content.trimmingCharacters(in: .whitespaces)))
         onUpdate()
         reset()
     }

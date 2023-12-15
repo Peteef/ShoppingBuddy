@@ -20,4 +20,11 @@ final class ListViewModel: ObservableObject {
         shoppingLists = repository.getAll()
         isLoading = false
     }
+    
+    func removeList(at indexes: IndexSet) {
+        indexes.forEach { index in
+            repository.remove(id: shoppingLists[index].id)
+        }
+        shoppingLists.remove(atOffsets: indexes)
+    }
 }

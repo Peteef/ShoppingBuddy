@@ -8,6 +8,7 @@
 import Foundation
 
 class InMemoryShoppingListRepository: ShoppingListRepository {
+    
     private var data: [String: ShoppingList] = [:]
     
     init() {
@@ -40,5 +41,9 @@ class InMemoryShoppingListRepository: ShoppingListRepository {
             throw ShoppingListError.notExist(withId: id)
         }
         data[id] = shoppingList
+    }
+    
+    func remove(id: String) {
+        data.removeValue(forKey: id)
     }
 }

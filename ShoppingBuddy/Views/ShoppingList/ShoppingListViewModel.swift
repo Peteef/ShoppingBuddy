@@ -23,6 +23,16 @@ final class ShoppingListViewModel: ObservableObject {
             self.isError = true
         }
     }
+    
+    func moveItems(from: IndexSet, to: Int) {
+        shoppingList.items.move(fromOffsets: from, toOffset: to)
+        update()
+    }
+    
+    func removeItems(at: IndexSet) {
+        shoppingList.items.remove(atOffsets: at)
+        update()
+    }
 
     func update() {
         do {

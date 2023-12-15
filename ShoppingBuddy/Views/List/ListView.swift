@@ -21,6 +21,7 @@ struct ListView: View {
                             ListElement(of: shoppingList)
                         }
                     }
+                    .onDelete(perform: viewModel.removeList)
                     Button("Create list", systemImage: "plus.circle") {
                         viewModel.isOpenNewListView = true
                     }

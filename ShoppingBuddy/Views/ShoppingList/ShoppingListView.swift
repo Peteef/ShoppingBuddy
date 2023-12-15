@@ -14,12 +14,16 @@ struct ShoppingListView: View {
         if !viewModel.isError {
             VStack {
                 Text(viewModel.shoppingList.name)
-                List($viewModel.shoppingList.items, id: \.id) { item in
-                    Toggle(isOn: item.checked, label: {
-                        Text(item.wrappedValue.content)
-                    }).onChange(of: item.wrappedValue.checked) {
-                        viewModel.update()
+                List {
+                    ForEach($viewModel.shoppingList.items, id: \.id) { item in
+                        Toggle(isOn: item.checked, label: {
+                            Text(item.wrappedValue.content)
+                        }).onChange(of: item.wrappedValue.checked) {
+                            viewModel.update()
+                        }
                     }
+                    .onMove(perform: viewModel.moveItems)
+                    .onDelete(perform: viewModel.removeItems)
                 }
             }
             .toolbar {
