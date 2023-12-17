@@ -188,6 +188,57 @@
         }
       }
     },
+    "shoppingList.clearDone.confirmation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to clear done items?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czy napewno chcesz wyczyścić zakończone?"
+          }
+        }
+      }
+    },
+    "shoppingList.clearDone.confirmButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potwierdź"
+          }
+        }
+      }
+    },
+    "shoppingList.clearDoneButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear done"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyczyść zrobione"
+          }
+        }
+      }
+    },
     "shoppingList.emptyState" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7814802B2E945E00C472ED /* ClearDoneButton.swift */; };
 		8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */; };
 		8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D72B265962007B2FA5 /* MainView.swift */; };
 		8BD7E9DA2B265963007B2FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D92B265963007B2FA5 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B7814802B2E945E00C472ED /* ClearDoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearDoneButton.swift; sourceTree = "<group>"; };
 		8BD7E9D22B265962007B2FA5 /* ShoppingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBuddy.swift; sourceTree = "<group>"; };
 		8BD7E9D72B265962007B2FA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				8BD7EA102B2BD4F5007B2FA5 /* ShoppingListItemView.swift */,
 				8BD7EA022B27D8E9007B2FA5 /* ShoppingListViewModel.swift */,
 				8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */,
+				8B7814802B2E945E00C472ED /* ClearDoneButton.swift */,
 				8BFEDE3F2B2E8EFD005BC621 /* EmptyShoppingListView.swift */,
 			);
 			path = ShoppingList;
@@ -285,6 +288,7 @@
 				8BD7EA032B27D8E9007B2FA5 /* ShoppingListViewModel.swift in Sources */,
 				8BD7E9EC2B26719B007B2FA5 /* Mocks.swift in Sources */,
 				8BD7E9F82B268CD0007B2FA5 /* LoadingView.swift in Sources */,
+				8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

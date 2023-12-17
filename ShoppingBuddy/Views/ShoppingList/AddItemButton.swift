@@ -7,14 +7,12 @@
 
 import SwiftUI
 
-struct AddItemButton: ToolbarContent {
+struct AddItemButton: View {
     @Binding var isOpenModal: Bool
     
-    var body: some ToolbarContent {
-        ToolbarItem(placement: .topBarTrailing) {
-            Button(String(localized: "shoppingList.addItemButton")) {
-                isOpenModal = true
-            }
+    var body: some View {
+        Button(String(localized: "shoppingList.addItemButton")) {
+            isOpenModal = true
         }
     }
 }

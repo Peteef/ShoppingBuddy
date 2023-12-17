@@ -34,7 +34,10 @@ struct ShoppingListView: View {
                 }
             }
             .toolbar {
-                AddItemButton(isOpenModal: $viewModel.isOpenNewItemModal)
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    ClearDoneButton(onClear: viewModel.removeCheckedItems)
+                    AddItemButton(isOpenModal: $viewModel.isOpenNewItemModal)
+                }
             }
             .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {
                 NewItemModalView(

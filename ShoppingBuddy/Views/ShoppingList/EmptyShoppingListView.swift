@@ -13,6 +13,7 @@ struct EmptyShoppingListView: View {
             Spacer()
             Text("shoppingList.emptyState")
                 .multilineTextAlignment(.center)
+                .foregroundStyle(Color(.systemGray2))
             Spacer()
         }
     }

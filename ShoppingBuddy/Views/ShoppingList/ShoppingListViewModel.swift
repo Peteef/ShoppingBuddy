@@ -33,6 +33,11 @@ final class ShoppingListViewModel: ObservableObject {
         shoppingList.items.remove(atOffsets: at)
         update()
     }
+    
+    func removeCheckedItems() {
+        shoppingList.items.removeAll(where: { item in item.checked })
+        update()
+    }
 
     func update() {
         do {
