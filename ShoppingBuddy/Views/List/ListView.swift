@@ -28,7 +28,7 @@ struct ListView: View {
                     .padding(.vertical, 8)
                 }
                 .listRowSpacing(16)
-                .navigationTitle("🛒 ShoppingBuddy")
+                .navigationTitle(String(localized: "appName"))
                 .sheet(isPresented: $viewModel.isOpenNewListModal, content: {
                     NewListModalView(viewModel: NewListModalViewModel(), isOpen: $viewModel.isOpenNewListModal)
                 })

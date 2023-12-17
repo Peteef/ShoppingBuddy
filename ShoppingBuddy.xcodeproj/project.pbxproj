@@ -30,6 +30,7 @@
 		8BD7EA112B2BD4F5007B2FA5 /* ShoppingListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA102B2BD4F5007B2FA5 /* ShoppingListItemView.swift */; };
 		8BD7EA132B2BD779007B2FA5 /* AddItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */; };
 		8BFEDE3E2B2E8B43005BC621 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEDE3D2B2E8B43005BC621 /* Localizable.xcstrings */; };
+		8BFEDE402B2E8EFD005BC621 /* EmptyShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEDE3F2B2E8EFD005BC621 /* EmptyShoppingListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		8BD7EA102B2BD4F5007B2FA5 /* ShoppingListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemView.swift; sourceTree = "<group>"; };
 		8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButton.swift; sourceTree = "<group>"; };
 		8BFEDE3D2B2E8B43005BC621 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		8BFEDE3F2B2E8EFD005BC621 /* EmptyShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyShoppingListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +100,8 @@
 				8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */,
 				8BD7E9EB2B26719B007B2FA5 /* Mocks.swift */,
 				8BD7E9D92B265963007B2FA5 /* Assets.xcassets */,
-				8BD7E9DB2B265963007B2FA5 /* Preview Content */,
 				8BFEDE3D2B2E8B43005BC621 /* Localizable.xcstrings */,
+				8BD7E9DB2B265963007B2FA5 /* Preview Content */,
 			);
 			path = ShoppingBuddy;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 				8BD7EA102B2BD4F5007B2FA5 /* ShoppingListItemView.swift */,
 				8BD7EA022B27D8E9007B2FA5 /* ShoppingListViewModel.swift */,
 				8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */,
+				8BFEDE3F2B2E8EFD005BC621 /* EmptyShoppingListView.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */,
 				8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */,
 				8BD7EA0F2B2A7676007B2FA5 /* NewItemModalViewModel.swift in Sources */,
+				8BFEDE402B2E8EFD005BC621 /* EmptyShoppingListView.swift in Sources */,
 				8BD7EA0C2B2A764D007B2FA5 /* NewItemModalView.swift in Sources */,
 				8BD7EA112B2BD4F5007B2FA5 /* ShoppingListItemView.swift in Sources */,
 				8BD7E9F62B268A9E007B2FA5 /* ListViewModel.swift in Sources */,

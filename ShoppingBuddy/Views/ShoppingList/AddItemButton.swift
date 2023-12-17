@@ -12,7 +12,7 @@ struct AddItemButton: ToolbarContent {
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
-            Button("Add item") {
+            Button(String(localized: "shoppingList.addItemButton")) {
                 isOpenModal = true
             }
         }

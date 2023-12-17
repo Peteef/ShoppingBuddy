@@ -1,6 +1,23 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "appName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🛒 ShoppingBuddy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🛒 ShoppingBuddy"
+          }
+        }
+      }
+    },
     "list.createListButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -150,6 +167,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wpisz nazwę listy..."
+          }
+        }
+      }
+    },
+    "shoppingList.addItemButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add item"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj przedmiot"
+          }
+        }
+      }
+    },
+    "shoppingList.emptyState" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List is empty.\nAdd something 😎"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista jest pusta.\nDodaj coś 😎"
           }
         }
       }

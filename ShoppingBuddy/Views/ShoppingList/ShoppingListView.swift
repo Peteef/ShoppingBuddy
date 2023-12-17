@@ -21,13 +21,17 @@ struct ShoppingListView: View {
                         .padding(.horizontal)
                     Spacer()
                 }
-                List {
-                    ForEach($viewModel.shoppingList.items, id: \.id) { item in
-                        ShoppingListItemView(item: item, onToggle: viewModel.update)
-                    }
-                    .onMove(perform: viewModel.moveItems)
-                    .onDelete(perform: viewModel.removeItems)
-                }.listStyle(.plain)
+                if viewModel.shoppingList.items.isEmpty {
+                    EmptyShoppingListView()
+                } else {
+                    List {
+                        ForEach($viewModel.shoppingList.items, id: \.id) { item in
+                            ShoppingListItemView(item: item, onToggle: viewModel.update)
+                        }
+                        .onMove(perform: viewModel.moveItems)
+                        .onDelete(perform: viewModel.removeItems)
+                    }.listStyle(.plain)
+                }
             }
             .toolbar {
                 AddItemButton(isOpenModal: $viewModel.isOpenNewItemModal)
