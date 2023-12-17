@@ -22,7 +22,7 @@ struct ListView: View {
                         }
                     }
                     .onDelete(perform: viewModel.removeList)
-                    Button("Create list", systemImage: "plus.circle") {
+                    Button(String(localized: "list.createListButton"), systemImage: "plus.circle") {
                         viewModel.isOpenNewListModal = true
                     }
                     .padding(.vertical, 8)

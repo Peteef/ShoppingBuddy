@@ -27,7 +27,7 @@ struct ListItem {
     let id: String
     let content: String
     var checked: Bool
-    
+
     init(id: String = NSUUID().uuidString.lowercased(), content: String, checked: Bool = false) {
         self.id = id
         self.content = content

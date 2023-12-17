@@ -16,12 +16,12 @@ struct NewListModalView: View {
     var body: some View {
         VStack {
             Spacer()
-            TextField("Type a list name...", text: $viewModel.name)
+            TextField(String(localized: "newList.namePlaceholder"), text: $viewModel.name)
                 .padding(.all, 16)
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
                 .focused($focusedNameTextField)
-            Button("Create") {
+            Button(String(localized: "newList.createButton")) {
                 if viewModel.canAdd {
                     viewModel.addNewList()
                     isOpen = false
@@ -40,7 +40,10 @@ struct NewListModalView: View {
             focusedNameTextField = true
         }
         .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("Error"), message: Text("List name cannot be empty!"))
+            Alert(
+                title: Text("newList.emptyNameAlert.title"),
+                message: Text("newList.emptyNameAlert.body")
+            )
         }
     }
 }

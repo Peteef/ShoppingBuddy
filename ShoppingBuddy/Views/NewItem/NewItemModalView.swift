@@ -16,12 +16,12 @@ struct NewItemModalView: View {
     var body: some View {
         VStack {
             Spacer()
-            TextField("What do you want to add?", text: $viewModel.content)
+            TextField(String(localized: "newItem.contentPlaceholder"), text: $viewModel.content)
                 .padding(.all, 16)
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
                 .focused($focusedContentTextField)
-            Button("Create") {
+            Button(String(localized: "newItem.createButton")) {
                 if viewModel.canAdd {
                     viewModel.addNewItem()
                     isOpen = false
@@ -40,7 +40,10 @@ struct NewItemModalView: View {
             focusedContentTextField = true
         }
         .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("Error"), message: Text("Item cannot be empty!"))
+            Alert(
+                title: Text("newItem.emptyContentAlert.title"),
+                message: Text("newItem.emptyContentAlert.body")
+            )
         }
     }
 }

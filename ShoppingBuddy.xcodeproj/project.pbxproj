@@ -29,6 +29,7 @@
 		8BD7EA0F2B2A7676007B2FA5 /* NewItemModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA0E2B2A7676007B2FA5 /* NewItemModalViewModel.swift */; };
 		8BD7EA112B2BD4F5007B2FA5 /* ShoppingListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA102B2BD4F5007B2FA5 /* ShoppingListItemView.swift */; };
 		8BD7EA132B2BD779007B2FA5 /* AddItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */; };
+		8BFEDE3E2B2E8B43005BC621 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEDE3D2B2E8B43005BC621 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		8BD7EA0E2B2A7676007B2FA5 /* NewItemModalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewItemModalViewModel.swift; path = ShoppingBuddy/Views/NewList/NewItemModalViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8BD7EA102B2BD4F5007B2FA5 /* ShoppingListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemView.swift; sourceTree = "<group>"; };
 		8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButton.swift; sourceTree = "<group>"; };
+		8BFEDE3D2B2E8B43005BC621 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				8BD7E9EB2B26719B007B2FA5 /* Mocks.swift */,
 				8BD7E9D92B265963007B2FA5 /* Assets.xcassets */,
 				8BD7E9DB2B265963007B2FA5 /* Preview Content */,
+				8BFEDE3D2B2E8B43005BC621 /* Localizable.xcstrings */,
 			);
 			path = ShoppingBuddy;
 			sourceTree = "<group>";
@@ -228,7 +231,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				pl,
 			);
 			mainGroup = 8BD7E9C92B265962007B2FA5;
 			productRefGroup = 8BD7E9D32B265962007B2FA5 /* Products */;
@@ -247,6 +250,7 @@
 			files = (
 				8BD7E9DD2B265963007B2FA5 /* Preview Assets.xcassets in Resources */,
 				8BD7E9DA2B265963007B2FA5 /* Assets.xcassets in Resources */,
+				8BFEDE3E2B2E8B43005BC621 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
