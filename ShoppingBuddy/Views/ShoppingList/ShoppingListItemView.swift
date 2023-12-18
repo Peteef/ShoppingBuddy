@@ -17,7 +17,7 @@ struct ShoppingListItemView: View {
             Text(item.content)
         }).onChange(of: item.checked) {
             onToggle()
-        }
+        }.toggleStyle(BagCheckbox())
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B49FEB82B310842008881BB /* BagCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEB72B310842008881BB /* BagCheckbox.swift */; };
 		8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7814802B2E945E00C472ED /* ClearDoneButton.swift */; };
 		8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */; };
 		8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D72B265962007B2FA5 /* MainView.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B49FEB72B310842008881BB /* BagCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagCheckbox.swift; sourceTree = "<group>"; };
 		8B7814802B2E945E00C472ED /* ClearDoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearDoneButton.swift; sourceTree = "<group>"; };
 		8BD7E9D22B265962007B2FA5 /* ShoppingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBuddy.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */,
 				8B7814802B2E945E00C472ED /* ClearDoneButton.swift */,
 				8BFEDE3F2B2E8EFD005BC621 /* EmptyShoppingListView.swift */,
+				8B49FEB72B310842008881BB /* BagCheckbox.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B49FEB82B310842008881BB /* BagCheckbox.swift in Sources */,
 				8BD7E9FF2B27D562007B2FA5 /* ShoppingListError.swift in Sources */,
 				8BD7E9EA2B267038007B2FA5 /* ListView.swift in Sources */,
 				8BD7EA082B293471007B2FA5 /* NewListModalView.swift in Sources */,

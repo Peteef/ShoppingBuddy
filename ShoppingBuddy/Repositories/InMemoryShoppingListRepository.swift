@@ -11,12 +11,6 @@ class InMemoryShoppingListRepository: ShoppingListRepository {
     
     private var data: [String: ShoppingList] = [:]
     
-    init() {
-        Mocks.shoppingLists.forEach { shoppingList in
-            data[shoppingList.id] = shoppingList
-        }
-    }
-    
     func getAll() -> [ShoppingList] {
         Array(data.values).sorted {
             $0.createdAt > $1.createdAt
