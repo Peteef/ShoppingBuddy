@@ -28,4 +28,21 @@ enum Mocks {
         ShoppingList(name: "Party list"),
         ShoppingList(name: "Travel list")
     ]
+    
+    static let bundle: ShoppingBundle = .init(
+        name: "Sandwitch",
+        items: [
+            "Bread",
+            "Butter",
+            "Cheese",
+            "Salad"
+        ]
+    )
+    
+    static let bundles: [ShoppingBundle] = [
+        bundle,
+        ShoppingBundle(name: "Soup"),
+        ShoppingBundle(name: "Party"),
+        ShoppingBundle(name: "BBQ")
+    ]
 }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  ShoppingBuddy
 //
 //  Created by Kamil Turek on 10/12/2023.
@@ -15,7 +15,7 @@ struct MainView: View {
                     Image(systemName: "cart")
                     Text("tabs.lists")
                 }
-            BundlesListView()
+            BundlesListView(viewModel: BundlesListViewModel())
                 .tabItem {
                     Image(systemName: "basket")
                     Text("tabs.bundles")

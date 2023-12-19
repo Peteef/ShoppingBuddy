@@ -1,5 +1,5 @@
 //
-//  EmptyShoppingListView.swift
+//  EmptyBundlesListView.swift
 //  ShoppingBuddy
 //
 //  Created by Kamil Turek on 17/12/2023.

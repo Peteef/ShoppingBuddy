@@ -1,5 +1,5 @@
 //
-//  NewListModalView.swift
+//  NewItemModalView.swift
 //  ShoppingBuddy
 //
 //  Created by Kamil Turek on 13/12/2023.

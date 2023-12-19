@@ -1,5 +1,5 @@
 //
-//  CheckboxToggle.swift
+//  BagCheckbox.swift
 //  ShoppingBuddy
 //
 //  Created by Kamil Turek on 19/12/2023.

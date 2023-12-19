@@ -1,5 +1,5 @@
 //
-//  AddItemButtonView.swift
+//  ClearDoneButton.swift
 //  ShoppingBuddy
 //
 //  Created by Kamil Turek on 15/12/2023.
