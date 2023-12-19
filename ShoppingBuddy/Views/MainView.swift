@@ -9,7 +9,18 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        ListView(viewModel: ListViewModel())
+        TabView {
+            ListView(viewModel: ListViewModel())
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("tabs.lists")
+                }
+            BundlesListView()
+                .tabItem {
+                    Image(systemName: "basket")
+                    Text("tabs.bundles")
+                }
+        }
     }
 }
 

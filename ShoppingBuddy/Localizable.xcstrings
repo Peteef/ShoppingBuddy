@@ -18,6 +18,23 @@
         }
       }
     },
+    "bundlesList.emptyState" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List is empty.\nCreate some bundle 🛍️"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista jest pusta.\nStwórz jakiś zestaw 🛍️"
+          }
+        }
+      }
+    },
     "list.createListButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -252,6 +269,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista jest pusta.\nDodaj coś 😎"
+          }
+        }
+      }
+    },
+    "tabs.bundles" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bundles"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zestawy"
+          }
+        }
+      }
+    },
+    "tabs.lists" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shopping lists"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listy zakupów"
           }
         }
       }
