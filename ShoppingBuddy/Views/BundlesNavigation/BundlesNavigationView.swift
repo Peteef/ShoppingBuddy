@@ -16,8 +16,16 @@ struct BundlesNavigationView: View {
                 BundlesListView(viewModel: BundlesListViewModel(
                     selectedBundle: $viewModel.selectedBundle
                 ))
+                .transition(.asymmetric(
+                    insertion: .move(edge: .leading),
+                    removal: .move(edge: .leading)
+                ))
             } else {
-                Text(viewModel.selectedBundle!.name)
+                BundleView(viewModel: BundleViewModel(of: $viewModel.selectedBundle))
+                    .transition(.asymmetric(
+                        insertion: .move(edge: .trailing),
+                        removal: .move(edge: .trailing)
+                    ))
             }
         }
     }

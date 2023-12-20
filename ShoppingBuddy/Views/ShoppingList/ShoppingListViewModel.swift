@@ -19,7 +19,7 @@ final class ShoppingListViewModel: ObservableObject {
         if let fromRepository = repository.get(id: of.id) {
             self.shoppingList = fromRepository
         } else {
-            self.shoppingList = ShoppingList.none
+            self.shoppingList = .none
             self.isError = true
         }
     }

@@ -18,6 +18,23 @@
         }
       }
     },
+    "bundle.backButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powrót"
+          }
+        }
+      }
+    },
     "bundlesList.emptyState" : {
       "extractionState" : "manual",
       "localizations" : {

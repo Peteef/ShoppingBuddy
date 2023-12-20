@@ -20,7 +20,9 @@ struct BundlesListView: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
                     ForEach(viewModel.bundles, id: \.id) { bundle in
                         Button(action: {
-                            viewModel.selectedBundle = bundle
+                            withAnimation(.easeOut(duration: 0.4)) {
+                                viewModel.selectedBundle = bundle
+                            }
                         }, label: {
                             Text(bundle.name)
                                 .frame(width: 120, height: 120)

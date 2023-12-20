@@ -17,6 +17,8 @@ struct ShoppingBundle {
         self.name = name
         self.items = items
     }
+    
+    public static let none = ShoppingBundle(name: "none")
 }
 
 typealias BundleItem = String
