@@ -12,13 +12,15 @@ struct BundlesListView: View {
 
     var body: some View {
         VStack {
-            if viewModel.bundles.isEmpty {
+            if viewModel.isLoading {
+                LoadingView()
+            } else if viewModel.bundles.isEmpty {
                 EmptyBundlesListView()
             } else {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
                     ForEach(viewModel.bundles, id: \.id) { bundle in
                         Button(action: {
-                            print("Open \(bundle.name)")
+                            viewModel.selectedBundle = bundle
                         }, label: {
                             Text(bundle.name)
                                 .frame(width: 120, height: 120)
@@ -39,5 +41,7 @@ struct BundlesListView: View {
 }
 
 #Preview {
-    BundlesListView(viewModel: BundlesListViewModel())
+    BundlesListView(viewModel: BundlesListViewModel(
+        selectedBundle: .constant(nil)
+    ))
 }

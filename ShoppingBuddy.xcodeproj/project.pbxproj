@@ -15,6 +15,8 @@
 		8B49FEC42B311BA9008881BB /* ShoppingBundleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEC32B311BA9008881BB /* ShoppingBundleRepository.swift */; };
 		8B49FEC62B311BF5008881BB /* InMemoryShoppingBundleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEC52B311BF5008881BB /* InMemoryShoppingBundleRepository.swift */; };
 		8B49FEC82B311C37008881BB /* BundleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEC72B311C37008881BB /* BundleError.swift */; };
+		8B49FECB2B326494008881BB /* BundlesNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FECA2B326494008881BB /* BundlesNavigationView.swift */; };
+		8B49FECD2B326515008881BB /* BundlesNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FECC2B326515008881BB /* BundlesNavigationViewModel.swift */; };
 		8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7814802B2E945E00C472ED /* ClearDoneButton.swift */; };
 		8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */; };
 		8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D72B265962007B2FA5 /* MainView.swift */; };
@@ -51,6 +53,8 @@
 		8B49FEC32B311BA9008881BB /* ShoppingBundleRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBundleRepository.swift; sourceTree = "<group>"; };
 		8B49FEC52B311BF5008881BB /* InMemoryShoppingBundleRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryShoppingBundleRepository.swift; sourceTree = "<group>"; };
 		8B49FEC72B311C37008881BB /* BundleError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleError.swift; sourceTree = "<group>"; };
+		8B49FECA2B326494008881BB /* BundlesNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlesNavigationView.swift; sourceTree = "<group>"; };
+		8B49FECC2B326515008881BB /* BundlesNavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BundlesNavigationViewModel.swift; path = ShoppingBuddy/Views/List/BundlesNavigationViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8B7814802B2E945E00C472ED /* ClearDoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearDoneButton.swift; sourceTree = "<group>"; };
 		8BD7E9D22B265962007B2FA5 /* ShoppingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBuddy.swift; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 			path = BundlesList;
 			sourceTree = "<group>";
 		};
+		8B49FEC92B326476008881BB /* BundlesNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				8B49FECC2B326515008881BB /* BundlesNavigationViewModel.swift */,
+				8B49FECA2B326494008881BB /* BundlesNavigationView.swift */,
+			);
+			path = BundlesNavigation;
+			sourceTree = "<group>";
+		};
 		8BD7E9C92B265962007B2FA5 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 		8BD7E9E42B266131007B2FA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B49FEC92B326476008881BB /* BundlesNavigation */,
 				8B49FEBA2B3113A6008881BB /* BundlesList */,
 				8BD7EA0D2B2A7652007B2FA5 /* NewItem */,
 				8BD7EA062B29345B007B2FA5 /* NewList */,
@@ -300,12 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B49FEC02B311AA2008881BB /* BundlesListViewModel.swift in Sources */,
+				8B49FECB2B326494008881BB /* BundlesNavigationView.swift in Sources */,
 				8B49FEB82B310842008881BB /* BagCheckbox.swift in Sources */,
 				8BD7E9FF2B27D562007B2FA5 /* ShoppingListError.swift in Sources */,
 				8BD7E9EA2B267038007B2FA5 /* ListView.swift in Sources */,
 				8BD7EA082B293471007B2FA5 /* NewListModalView.swift in Sources */,
 				8BD7E9FB2B27D03B007B2FA5 /* ShoppingListRepository.swift in Sources */,
 				8BD7E9FD2B27D109007B2FA5 /* InMemoryShoppingListRepository.swift in Sources */,
+				8B49FECD2B326515008881BB /* BundlesNavigationViewModel.swift in Sources */,
 				8B49FEC62B311BF5008881BB /* InMemoryShoppingBundleRepository.swift in Sources */,
 				8BD7EA0A2B2934E0007B2FA5 /* NewListModalViewModel.swift in Sources */,
 				8BD7E9F42B268797007B2FA5 /* ShoppingListView.swift in Sources */,

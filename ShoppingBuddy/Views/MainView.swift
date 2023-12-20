@@ -15,7 +15,7 @@ struct MainView: View {
                     Image(systemName: "cart")
                     Text("tabs.lists")
                 }
-            BundlesListView(viewModel: BundlesListViewModel())
+            BundlesNavigationView(viewModel: BundlesNavigationViewModel())
                 .tabItem {
                     Image(systemName: "basket")
                     Text("tabs.bundles")
