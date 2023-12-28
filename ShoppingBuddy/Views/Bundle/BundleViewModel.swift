@@ -27,4 +27,8 @@ final class BundleViewModel: ObservableObject {
             self.isError = true
         }
     }
+    
+    func removeBundle() {
+        repository.remove(id: bundle.id)
+    }
 }

@@ -35,6 +35,23 @@
         }
       }
     },
+    "bundle.removeBundle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove bundle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń zestaw"
+          }
+        }
+      }
+    },
     "bundlesList.emptyState" : {
       "extractionState" : "manual",
       "localizations" : {

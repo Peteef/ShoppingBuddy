@@ -19,6 +19,12 @@ struct BundleView: View {
                     }
                 }.padding()
                 Spacer()
+                Button(String(localized: "bundle.removeBundle"), systemImage: "trash", role: .destructive) {
+                    viewModel.removeBundle()
+                    withAnimation(.easeIn(duration: 0.2)) {
+                        viewModel.selected = nil
+                    }
+                }.padding()
             }
             Text(viewModel.bundle.name)
             List {
