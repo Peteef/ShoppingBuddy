@@ -15,7 +15,7 @@ struct BundlesListView: View {
             if viewModel.isLoading {
                 LoadingView()
             } else if viewModel.bundles.isEmpty {
-                EmptyBundlesListView()
+                EmptyBundlesListView(onCreate: { viewModel.isOpenNewBundleModal = true })
             } else {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
                     ForEach(viewModel.bundles, id: \.id) { bundle in
@@ -33,7 +33,26 @@ struct BundlesListView: View {
                                 .font(.system(size: 16, weight: .heavy))
                         })
                     }
+                    Button(action: {
+                        viewModel.isOpenNewBundleModal = true
+                    }, label: {
+                        Image(systemName: "plus")
+                            .frame(width: 120, height: 120)
+                            .background(Color.accentColor.secondary)
+                            .clipShape(.rect(cornerRadius: 16))
+                            .shadow(radius: 4)
+                            .foregroundStyle(.white) // TODO: Make color dependent on scheme
+                            .font(.system(size: 16, weight: .heavy))
+                    })
                 }
+            }
+        }
+        .sheet(isPresented: $viewModel.isOpenNewBundleModal, content: {
+            NewBundleModalView(viewModel: NewBundleModalViewModel(), isOpen: $viewModel.isOpenNewBundleModal)
+        })
+        .onChange(of: viewModel.isOpenNewBundleModal) {
+            if !viewModel.isOpenNewBundleModal {
+                viewModel.load()
             }
         }
         .onAppear {

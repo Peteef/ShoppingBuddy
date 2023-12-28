@@ -13,6 +13,8 @@ final class BundlesListViewModel: ObservableObject {
 
     @Published var bundles: [ShoppingBundle] = []
     @Published var isLoading: Bool = false
+    
+    @Published var isOpenNewBundleModal: Bool = false
 
     @Binding var selectedBundle: ShoppingBundle?
 
