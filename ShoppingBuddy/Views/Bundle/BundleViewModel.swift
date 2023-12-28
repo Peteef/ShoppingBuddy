@@ -31,4 +31,19 @@ final class BundleViewModel: ObservableObject {
     func removeBundle() {
         repository.remove(id: bundle.id)
     }
+    
+    func removeItems(at: IndexSet) {
+        bundle.items.remove(atOffsets: at)
+        update()
+    }
+    
+    func update() {
+        do {
+            try repository.update(bundle: bundle)
+        } catch let BundleError.alreadyExist(withId) {
+            print("Bundle with id: \(withId) does not exist!")
+        } catch {
+            print("Something went wrong.")
+        }
+    }
 }

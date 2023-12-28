@@ -10,7 +10,7 @@ import Foundation
 struct ShoppingBundle {
     let id: String
     let name: String
-    let items: [BundleItem]
+    var items: [BundleItem]
     
     init(id: String = NSUUID().uuidString.lowercased(), name: String, items: [BundleItem] = []) {
         self.id = id

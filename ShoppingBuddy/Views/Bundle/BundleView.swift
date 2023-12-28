@@ -24,13 +24,19 @@ struct BundleView: View {
                     withAnimation(.easeIn(duration: 0.2)) {
                         viewModel.selected = nil
                     }
-                }.padding()
+                }
+                .padding()
             }
             Text(viewModel.bundle.name)
             List {
                 ForEach(viewModel.bundle.items, id: \.self) { item in
                     Text(item)
                 }
+                .onDelete(perform: viewModel.removeItems)
+                Button(String(localized: "bundle.addItemButton"), systemImage: "plus.circle") {
+                    print("Add")
+                }
+                .padding(.vertical, 4)
             }
             Spacer()
         }
