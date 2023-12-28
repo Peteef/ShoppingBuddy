@@ -18,6 +18,23 @@
         }
       }
     },
+    "bundle.addItemButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add item"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj przedmiot"
+          }
+        }
+      }
+    },
     "bundle.backButton" : {
       "extractionState" : "manual",
       "localizations" : {

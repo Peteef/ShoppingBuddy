@@ -16,6 +16,8 @@ final class BundleViewModel: ObservableObject {
     @Published var bundle: ShoppingBundle
     @Published var isError: Bool = false
     
+    @Published var isOpenNewItemModal: Bool = false
+    
     @Binding var selected: ShoppingBundle?
 
     init(of: Binding<ShoppingBundle?>) {

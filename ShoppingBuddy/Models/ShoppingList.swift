@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct ShoppingList: Identifiable {
+struct ShoppingList: Identifiable, ContainingItems {
+    typealias I = ListItem
+    
     let id: String
     let name: String
     var items: [ListItem]

@@ -21,6 +21,7 @@
 		8B49FED22B3270BA008881BB /* BundleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FED12B3270BA008881BB /* BundleViewModel.swift */; };
 		8B49FED52B3DC32D008881BB /* NewBundleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FED42B3DC32D008881BB /* NewBundleModalView.swift */; };
 		8B49FED72B3DC369008881BB /* NewBundleModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FED62B3DC369008881BB /* NewBundleModalViewModel.swift */; };
+		8B49FEDB2B3DD5A0008881BB /* ContainingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEDA2B3DD5A0008881BB /* ContainingItems.swift */; };
 		8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7814802B2E945E00C472ED /* ClearDoneButton.swift */; };
 		8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */; };
 		8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D72B265962007B2FA5 /* MainView.swift */; };
@@ -63,6 +64,7 @@
 		8B49FED12B3270BA008881BB /* BundleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleViewModel.swift; sourceTree = "<group>"; };
 		8B49FED42B3DC32D008881BB /* NewBundleModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewBundleModalView.swift; path = ShoppingBuddy/Views/NewItem/NewBundleModalView.swift; sourceTree = SOURCE_ROOT; };
 		8B49FED62B3DC369008881BB /* NewBundleModalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewBundleModalViewModel.swift; path = ShoppingBuddy/Views/NewList/NewBundleModalViewModel.swift; sourceTree = SOURCE_ROOT; };
+		8B49FEDA2B3DD5A0008881BB /* ContainingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainingItems.swift; sourceTree = "<group>"; };
 		8B7814802B2E945E00C472ED /* ClearDoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearDoneButton.swift; sourceTree = "<group>"; };
 		8BD7E9D22B265962007B2FA5 /* ShoppingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBuddy.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				8BD7E9EE2B26721D007B2FA5 /* ShoppingList.swift */,
 				8B49FEC12B311AE1008881BB /* ShoppingBundle.swift */,
+				8B49FEDA2B3DD5A0008881BB /* ContainingItems.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				8BD7E9FB2B27D03B007B2FA5 /* ShoppingListRepository.swift in Sources */,
 				8BD7E9FD2B27D109007B2FA5 /* InMemoryShoppingListRepository.swift in Sources */,
 				8B49FECD2B326515008881BB /* BundlesNavigationViewModel.swift in Sources */,
+				8B49FEDB2B3DD5A0008881BB /* ContainingItems.swift in Sources */,
 				8B49FEC62B311BF5008881BB /* InMemoryShoppingBundleRepository.swift in Sources */,
 				8BD7EA0A2B2934E0007B2FA5 /* NewListModalViewModel.swift in Sources */,
 				8BD7E9F42B268797007B2FA5 /* ShoppingListView.swift in Sources */,

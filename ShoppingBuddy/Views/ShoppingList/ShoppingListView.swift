@@ -41,8 +41,9 @@ struct ShoppingListView: View {
             }
             .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {
                 NewItemModalView(
-                    viewModel: NewItemModalViewModel(
-                        shoppingList: $viewModel.shoppingList,
+                    viewModel: NewItemModalViewModel<ShoppingList>(
+                        containingItems: $viewModel.shoppingList,
+                        createItem: { ListItem(content: $0) },
                         onUpdate: viewModel.update
                     ),
                     isOpen: $viewModel.isOpenNewItemModal

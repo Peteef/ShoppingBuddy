@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct NewItemModalView: View {
-    @StateObject var viewModel: NewItemModalViewModel
+struct NewItemModalView<T>: View where T: ContainingItems {
+    @StateObject var viewModel: NewItemModalViewModel<T>
     @Binding var isOpen: Bool
 
     @FocusState private var focusedContentTextField: Bool
@@ -49,5 +49,5 @@ struct NewItemModalView: View {
 }
 
 #Preview {
-    NewItemModalView(viewModel: NewItemModalViewModel(shoppingList: .constant(Mocks.shoppingList), onUpdate: {}), isOpen: .constant(true))
+    NewItemModalView(viewModel: NewItemModalViewModel(containingItems: .constant(Mocks.shoppingList), createItem: { ListItem(content: $0) }, onUpdate: {}), isOpen: .constant(true))
 }

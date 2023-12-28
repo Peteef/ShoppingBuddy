@@ -34,12 +34,22 @@ struct BundleView: View {
                 }
                 .onDelete(perform: viewModel.removeItems)
                 Button(String(localized: "bundle.addItemButton"), systemImage: "plus.circle") {
-                    print("Add")
+                    viewModel.isOpenNewItemModal = true
                 }
                 .padding(.vertical, 4)
             }
             Spacer()
         }
+        .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {
+            NewItemModalView(
+                viewModel: NewItemModalViewModel<ShoppingBundle>(
+                    containingItems: $viewModel.bundle,
+                    createItem: { $0 },
+                    onUpdate: viewModel.update
+                ),
+                isOpen: $viewModel.isOpenNewItemModal
+            )
+        })
     }
 }
 

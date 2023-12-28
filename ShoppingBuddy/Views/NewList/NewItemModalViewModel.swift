@@ -8,15 +8,17 @@
 import Foundation
 import SwiftUI
 
-final class NewItemModalViewModel: ObservableObject {
-    @Binding var shoppingList: ShoppingList
+final class NewItemModalViewModel<T>: ObservableObject where T: ContainingItems {
+    @Binding var containingItems: T
+    let createItem: (String) -> T.I
     let onUpdate: () -> Void
     
     @Published var content: String = ""
     @Published var showAlert: Bool = false
     
-    init(shoppingList: Binding<ShoppingList>, onUpdate: @escaping () -> Void) {
-        self._shoppingList = shoppingList
+    init(containingItems: Binding<T>, createItem: @escaping (String) -> T.I, onUpdate: @escaping () -> Void) {
+        self._containingItems = containingItems
+        self.createItem = createItem
         self.onUpdate = onUpdate
     }
     
@@ -30,7 +32,7 @@ final class NewItemModalViewModel: ObservableObject {
             return
         }
         
-        shoppingList.items.append(ListItem(content: content.trimmingCharacters(in: .whitespaces)))
+        containingItems.items.append(createItem(content.trimmingCharacters(in: .whitespaces)))
         onUpdate()
         reset()
     }
