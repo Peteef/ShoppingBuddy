@@ -19,15 +19,15 @@ struct BundleView: View {
                     }
                 }.padding()
                 Spacer()
-                Button(String(localized: "bundle.removeBundle"), systemImage: "trash", role: .destructive) {
+                RemoveBundleButton {
                     viewModel.removeBundle()
                     withAnimation(.easeIn(duration: 0.2)) {
                         viewModel.selected = nil
                     }
                 }
-                .padding()
             }
             Text(viewModel.bundle.name)
+                .font(.system(size: 20, weight: .bold))
             List {
                 ForEach(viewModel.bundle.items, id: \.self) { item in
                     Text(item)

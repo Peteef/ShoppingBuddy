@@ -69,6 +69,40 @@
         }
       }
     },
+    "bundle.removeBundle.confirmation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to remove this bundle?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czy napewno chcesz usunąć ten zestaw?"
+          }
+        }
+      }
+    },
+    "bundle.removeBundle.confirmButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potwierdź"
+          }
+        }
+      }
+    },
     "bundlesList.emptyState" : {
       "extractionState" : "manual",
       "localizations" : {
