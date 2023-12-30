@@ -14,6 +14,7 @@ final class ShoppingListViewModel: ObservableObject {
     @Published var isError: Bool = false
     
     @Published var isOpenNewItemModal: Bool = false
+    @Published var isOpenAddBundleModal: Bool = false
 
     init(of: ShoppingList) {
         if let fromRepository = repository.get(id: of.id) {

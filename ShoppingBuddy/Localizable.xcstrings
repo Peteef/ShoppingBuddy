@@ -1,6 +1,40 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "addBundle.addItemsButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add items"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj przedmioty"
+          }
+        }
+      }
+    },
+    "addBundle.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select bundle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz zestaw"
+          }
+        }
+      }
+    },
     "appName" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -337,6 +371,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wpisz nazwę listy..."
+          }
+        }
+      }
+    },
+    "shoppingList.addBundleButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add bundle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj zestaw"
           }
         }
       }

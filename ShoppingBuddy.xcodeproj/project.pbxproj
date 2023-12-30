@@ -25,6 +25,9 @@
 		8B49FEDD2B3FAAFB008881BB /* RemoveBundleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEDC2B3FAAFB008881BB /* RemoveBundleButton.swift */; };
 		8B49FEDF2B3FAE11008881BB /* BundleTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEDE2B3FAE11008881BB /* BundleTileView.swift */; };
 		8B49FEE12B3FAF50008881BB /* NewBundleTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEE02B3FAF50008881BB /* NewBundleTileView.swift */; };
+		8B49FEE32B3FB15B008881BB /* AddBundleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEE22B3FB15B008881BB /* AddBundleButton.swift */; };
+		8B49FEE72B3FB2CD008881BB /* AddBundleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEE62B3FB2CD008881BB /* AddBundleModalView.swift */; };
+		8B49FEE92B3FB2E2008881BB /* AddBundleModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEE82B3FB2E2008881BB /* AddBundleModalViewModel.swift */; };
 		8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7814802B2E945E00C472ED /* ClearDoneButton.swift */; };
 		8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */; };
 		8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D72B265962007B2FA5 /* MainView.swift */; };
@@ -71,6 +74,9 @@
 		8B49FEDC2B3FAAFB008881BB /* RemoveBundleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveBundleButton.swift; sourceTree = "<group>"; };
 		8B49FEDE2B3FAE11008881BB /* BundleTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleTileView.swift; sourceTree = "<group>"; };
 		8B49FEE02B3FAF50008881BB /* NewBundleTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBundleTileView.swift; sourceTree = "<group>"; };
+		8B49FEE22B3FB15B008881BB /* AddBundleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBundleButton.swift; sourceTree = "<group>"; };
+		8B49FEE62B3FB2CD008881BB /* AddBundleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBundleModalView.swift; sourceTree = "<group>"; };
+		8B49FEE82B3FB2E2008881BB /* AddBundleModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBundleModalViewModel.swift; sourceTree = "<group>"; };
 		8B7814802B2E945E00C472ED /* ClearDoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearDoneButton.swift; sourceTree = "<group>"; };
 		8BD7E9D22B265962007B2FA5 /* ShoppingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBuddy.swift; sourceTree = "<group>"; };
@@ -151,6 +157,15 @@
 			path = NewBundle;
 			sourceTree = "<group>";
 		};
+		8B49FEE42B3FB284008881BB /* AddBundle */ = {
+			isa = PBXGroup;
+			children = (
+				8B49FEE62B3FB2CD008881BB /* AddBundleModalView.swift */,
+				8B49FEE82B3FB2E2008881BB /* AddBundleModalViewModel.swift */,
+			);
+			path = AddBundle;
+			sourceTree = "<group>";
+		};
 		8BD7E9C92B265962007B2FA5 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +210,7 @@
 		8BD7E9E42B266131007B2FA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B49FEE42B3FB284008881BB /* AddBundle */,
 				8B49FED32B3DC305008881BB /* NewBundle */,
 				8B49FECE2B32708A008881BB /* Bundle */,
 				8B49FEC92B326476008881BB /* BundlesNavigation */,
@@ -257,6 +273,7 @@
 				8BD7EA102B2BD4F5007B2FA5 /* ShoppingListItemView.swift */,
 				8BD7EA022B27D8E9007B2FA5 /* ShoppingListViewModel.swift */,
 				8BD7EA122B2BD779007B2FA5 /* AddItemButton.swift */,
+				8B49FEE22B3FB15B008881BB /* AddBundleButton.swift */,
 				8B7814802B2E945E00C472ED /* ClearDoneButton.swift */,
 				8BFEDE3F2B2E8EFD005BC621 /* EmptyShoppingListView.swift */,
 				8B49FEB72B310842008881BB /* BagCheckbox.swift */,
@@ -373,6 +390,7 @@
 				8B49FEBE2B3118C9008881BB /* EmptyBundlesListView.swift in Sources */,
 				8BD7E9EF2B26721D007B2FA5 /* ShoppingList.swift in Sources */,
 				8BD7E9F22B26800D007B2FA5 /* ListElementView.swift in Sources */,
+				8B49FEE32B3FB15B008881BB /* AddBundleButton.swift in Sources */,
 				8B49FED72B3DC369008881BB /* NewBundleModalViewModel.swift in Sources */,
 				8B49FEDD2B3FAAFB008881BB /* RemoveBundleButton.swift in Sources */,
 				8BD7EA132B2BD779007B2FA5 /* AddItemButton.swift in Sources */,
@@ -388,6 +406,8 @@
 				8B49FED52B3DC32D008881BB /* NewBundleModalView.swift in Sources */,
 				8BD7EA112B2BD4F5007B2FA5 /* ShoppingListItemView.swift in Sources */,
 				8BD7E9F62B268A9E007B2FA5 /* ListViewModel.swift in Sources */,
+				8B49FEE72B3FB2CD008881BB /* AddBundleModalView.swift in Sources */,
+				8B49FEE92B3FB2E2008881BB /* AddBundleModalViewModel.swift in Sources */,
 				8BD7EA032B27D8E9007B2FA5 /* ShoppingListViewModel.swift in Sources */,
 				8B49FEBC2B31140A008881BB /* BundlesListView.swift in Sources */,
 				8BD7E9EC2B26719B007B2FA5 /* Mocks.swift in Sources */,
