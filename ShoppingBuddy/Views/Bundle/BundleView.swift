@@ -19,12 +19,12 @@ struct BundleView: View {
                     }
                 }.padding()
                 Spacer()
-                RemoveBundleButton {
+                RemoveBundleButton(onRemove: {
                     viewModel.removeBundle()
                     withAnimation(.easeIn(duration: 0.2)) {
                         viewModel.selected = nil
                     }
-                }
+                })
             }
             Text(viewModel.bundle.name)
                 .font(.system(size: 20, weight: .bold))

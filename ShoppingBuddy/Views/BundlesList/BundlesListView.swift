@@ -19,30 +19,14 @@ struct BundlesListView: View {
             } else {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
                     ForEach(viewModel.bundles, id: \.id) { bundle in
-                        Button(action: {
+                        BundleTileView(of: bundle, onTap: {
                             withAnimation(.easeOut(duration: 0.4)) {
                                 viewModel.selectedBundle = bundle
                             }
-                        }, label: {
-                            Text(bundle.name)
-                                .frame(width: 120, height: 120)
-                                .background(Color.accentColor)
-                                .clipShape(.rect(cornerRadius: 16))
-                                .shadow(radius: 4)
-                                .foregroundStyle(.white) // TODO: Make color dependent on scheme
-                                .font(.system(size: 16, weight: .heavy))
                         })
                     }
-                    Button(action: {
+                    NewBundleTileView(onTap:{
                         viewModel.isOpenNewBundleModal = true
-                    }, label: {
-                        Image(systemName: "plus")
-                            .frame(width: 120, height: 120)
-                            .background(Color.accentColor.secondary)
-                            .clipShape(.rect(cornerRadius: 16))
-                            .shadow(radius: 4)
-                            .foregroundStyle(.white) // TODO: Make color dependent on scheme
-                            .font(.system(size: 16, weight: .heavy))
                     })
                 }
             }
