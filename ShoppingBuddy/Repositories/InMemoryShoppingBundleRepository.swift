@@ -11,12 +11,6 @@ class InMemoryShoppingBundleRepository: ShoppingBundleRepository {
     
     private var data: [String: ShoppingBundle] = [:]
     
-    init() {
-        Mocks.bundles.forEach { bundle in
-            data[bundle.id] = bundle
-        }
-    }
-    
     func getAll() -> [ShoppingBundle] {
         Array(data.values).sorted {
             $0.name < $1.name
