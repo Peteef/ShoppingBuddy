@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct BundleTileView: View {
+    @EnvironmentObject var viewModel: BundlesListViewModel
+    
     let of: ShoppingBundle
-    let onTap: () -> Void
     
     var body: some View {
-        Button(action: onTap, label: {
+        Button(action: {
+            withAnimation(.easeOut(duration: 0.4)) {
+                viewModel.selectedBundle = of
+            }
+        }, label: {
             Text(of.name)
                 .frame(width: 120, height: 120)
                 .background(Color.accentColor)
@@ -25,5 +30,6 @@ struct BundleTileView: View {
 }
 
 #Preview {
-    BundleTileView(of: Mocks.bundle, onTap: { print("Bundle tapped") })
+    BundleTileView(of: Mocks.bundle)
+        .environmentObject(BundlesListViewModel(selectedBundle: .constant(Mocks.bundle)))
 }

@@ -15,22 +15,17 @@ struct BundlesListView: View {
             if viewModel.isLoading {
                 LoadingView()
             } else if viewModel.bundles.isEmpty {
-                EmptyBundlesListView(onCreate: { viewModel.isOpenNewBundleModal = true })
+                EmptyBundlesListView()
             } else {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
                     ForEach(viewModel.bundles, id: \.id) { bundle in
-                        BundleTileView(of: bundle, onTap: {
-                            withAnimation(.easeOut(duration: 0.4)) {
-                                viewModel.selectedBundle = bundle
-                            }
-                        })
+                        BundleTileView(of: bundle)
                     }
-                    NewBundleTileView(onTap:{
-                        viewModel.isOpenNewBundleModal = true
-                    })
+                    NewBundleTileView()
                 }
             }
         }
+        .environmentObject(viewModel)
         .sheet(isPresented: $viewModel.isOpenNewBundleModal, content: {
             NewBundleModalView(viewModel: NewBundleModalViewModel(), isOpen: $viewModel.isOpenNewBundleModal)
         })

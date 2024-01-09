@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct NewBundleTileView: View {
-    let onTap: () -> Void
+    @EnvironmentObject var viewModel: BundlesListViewModel
 
     var body: some View {
-        Button(action: onTap, label: {
+        Button(action: {
+            viewModel.isOpenNewBundleModal = true
+        }, label: {
             Image(systemName: "plus")
                 .frame(width: 120, height: 120)
                 .background(Color.accentColor.secondary)
@@ -24,5 +26,6 @@ struct NewBundleTileView: View {
 }
 
 #Preview {
-    NewBundleTileView(onTap: { print("New bundle tapped") })
+    NewBundleTileView()
+        .environmentObject(BundlesListViewModel(selectedBundle: .constant(Mocks.bundle)))
 }

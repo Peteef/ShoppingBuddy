@@ -12,20 +12,7 @@ struct BundleView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Button(String(localized: "bundle.backButton"), systemImage: "chevron.backward") {
-                    withAnimation(.easeIn(duration: 0.2)) {
-                        viewModel.selected = nil
-                    }
-                }.padding()
-                Spacer()
-                RemoveBundleButton(onRemove: {
-                    viewModel.removeBundle()
-                    withAnimation(.easeIn(duration: 0.2)) {
-                        viewModel.selected = nil
-                    }
-                })
-            }
+            BundleToolbar()
             Text(viewModel.bundle.name)
                 .font(.system(size: 20, weight: .bold))
             List {
@@ -40,6 +27,7 @@ struct BundleView: View {
             }
             Spacer()
         }
+        .environmentObject(viewModel)
         .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {
             NewItemModalView(
                 viewModel: NewItemModalViewModel<ShoppingBundle>(

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmptyBundlesListView: View {
-    let onCreate: () -> Void
+    @EnvironmentObject var viewModel: BundlesListViewModel
     
     var body: some View {
         VStack {
@@ -16,7 +16,9 @@ struct EmptyBundlesListView: View {
             Text("bundlesList.emptyState")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color(.systemGray2))
-            Button(action: onCreate, label: {
+            Button(action: {
+                viewModel.isOpenNewBundleModal = true
+            }, label: {
                 Image(systemName: "plus.circle.fill")
                     .resizable()
                     .scaledToFit()
@@ -29,5 +31,6 @@ struct EmptyBundlesListView: View {
 }
 
 #Preview {
-    EmptyBundlesListView(onCreate: { print("Create tapped") })
+    EmptyBundlesListView()
+        .environmentObject(BundlesListViewModel(selectedBundle: .constant(Mocks.bundle)))
 }
