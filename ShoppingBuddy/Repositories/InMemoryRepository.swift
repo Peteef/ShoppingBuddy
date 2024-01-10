@@ -8,6 +8,5 @@
 import Foundation
 
 enum InMemoryRepository {
-    public static let shoppingListRepository: ShoppingListRepository = InMemoryShoppingListRepository()
     public static let bundleRepository: ShoppingBundleRepository = InMemoryShoppingBundleRepository()
 }

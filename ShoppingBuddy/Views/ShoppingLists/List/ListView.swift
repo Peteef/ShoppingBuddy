@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
-    @StateObject var viewModel: ListViewModel
+    @State var viewModel: ListViewModel
 
     var body: some View {
         VStack {

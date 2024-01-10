@@ -8,7 +8,7 @@
 import Foundation
 
 final class ShoppingListViewModel: ObservableObject {
-    private let repository: ShoppingListRepository = InMemoryRepository.shoppingListRepository
+    private let repository = ShoppingListRepository.instance
 
     @Published var shoppingList: ShoppingList
     @Published var isError: Bool = false
@@ -27,26 +27,13 @@ final class ShoppingListViewModel: ObservableObject {
     
     func moveItems(from: IndexSet, to: Int) {
         shoppingList.items.move(fromOffsets: from, toOffset: to)
-        update()
     }
     
     func removeItems(at: IndexSet) {
         shoppingList.items.remove(atOffsets: at)
-        update()
     }
     
     func removeCheckedItems() {
         shoppingList.items.removeAll(where: { item in item.checked })
-        update()
-    }
-
-    func update() {
-        do {
-            try repository.update(shoppingList: shoppingList)
-        } catch let ShoppingListError.alreadyExist(withId) {
-            print("Shopping list with id: \(withId) does not exist!")
-        } catch {
-            print("Something went wrong.")
-        }
     }
 }

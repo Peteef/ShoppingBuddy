@@ -6,14 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
+import SwiftData
 
-final class ListViewModel: ObservableObject {
-    private let repository: ShoppingListRepository = InMemoryRepository.shoppingListRepository
+@Observable
+class ListViewModel {
+    @ObservationIgnored
+    private let repository = ShoppingListRepository.instance
+    
+    var shoppingLists: [ShoppingList] = []
+    var isLoading: Bool = false
 
-    @Published var shoppingLists: [ShoppingList] = []
-    @Published var isLoading: Bool = false
-
-    @Published var isOpenNewListModal: Bool = false
+    var isOpenNewListModal: Bool = false
+    
+    init() {
+        load()
+    }
 
     func load() {
         isLoading = true
@@ -23,8 +31,7 @@ final class ListViewModel: ObservableObject {
     
     func removeList(at indexes: IndexSet) {
         indexes.forEach { index in
-            repository.remove(id: shoppingLists[index].id)
+            repository.remove(shoppingList: shoppingLists[index])
         }
-        shoppingLists.remove(atOffsets: indexes)
     }
 }

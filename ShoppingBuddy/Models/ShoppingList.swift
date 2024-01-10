@@ -6,32 +6,31 @@
 //
 
 import Foundation
+import SwiftData
 
-struct ShoppingList: Identifiable, ContainingItems {
+@Model
+class ShoppingList: Identifiable, ContainingItems {
     typealias I = ListItem
     
-    let id: String
     let name: String
     var items: [ListItem]
     let createdAt: Date
 
-    init(id: String = NSUUID().uuidString.lowercased(), name: String, items: [ListItem] = [], createdAt: Date = Date.now) {
-        self.id = id
+    init(name: String, items: [ListItem] = [], createdAt: Date = .now) {
         self.name = name
         self.items = items
         self.createdAt = createdAt
     }
 
-    public static let none: ShoppingList = .init(id: "none", name: "none", items: [], createdAt: Date.distantPast)
+    public static let none: ShoppingList = .init(name: "none", items: [], createdAt: Date.distantPast)
 }
 
-struct ListItem {
-    let id: String
+@Model
+class ListItem: Identifiable {
     let content: String
     var checked: Bool
 
-    init(id: String = NSUUID().uuidString.lowercased(), content: String, checked: Bool = false) {
-        self.id = id
+    init(content: String, checked: Bool = false) {
         self.content = content
         self.checked = checked
     }

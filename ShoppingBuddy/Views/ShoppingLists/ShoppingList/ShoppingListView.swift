@@ -25,8 +25,8 @@ struct ShoppingListView: View {
                     EmptyShoppingListView()
                 } else {
                     List {
-                        ForEach($viewModel.shoppingList.items, id: \.id) { item in
-                            ShoppingListItemView(item: item, onToggle: viewModel.update)
+                        ForEach($viewModel.shoppingList.items, id: \.content) { item in
+                            ShoppingListItemView(item: item, onToggle: {})
                         }
                         .onMove(perform: viewModel.moveItems)
                         .onDelete(perform: viewModel.removeItems)
@@ -45,7 +45,7 @@ struct ShoppingListView: View {
                     viewModel: NewItemModalViewModel<ShoppingList>(
                         containingItems: $viewModel.shoppingList,
                         createItem: { ListItem(content: $0) },
-                        onUpdate: viewModel.update
+                        onUpdate: {}
                     ),
                     isOpen: $viewModel.isOpenNewItemModal
                 )
@@ -54,7 +54,7 @@ struct ShoppingListView: View {
                 AddBundleModalView(
                     viewModel: AddBundleModalViewModel(
                         shoppingList: $viewModel.shoppingList,
-                        onUpdate: viewModel.update
+                        onUpdate: {}
                     ),
                     isOpen: $viewModel.isOpenAddBundleModal
                 )
