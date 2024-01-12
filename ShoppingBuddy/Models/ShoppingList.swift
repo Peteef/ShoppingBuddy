@@ -29,9 +29,11 @@ class ShoppingList: Identifiable, ContainingItems {
 class ListItem: Identifiable {
     let content: String
     var checked: Bool
+    let createdAt: Date
 
-    init(content: String, checked: Bool = false) {
+    init(content: String, checked: Bool = false, createdAt: Date = .now) {
         self.content = content
         self.checked = checked
+        self.createdAt = createdAt
     }
 }

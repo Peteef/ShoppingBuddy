@@ -14,13 +14,15 @@ class ShoppingBundle: Identifiable, Hashable, ContainingItems {
     
     let name: String
     @Relationship (deleteRule: .cascade) var items: [BundleItem]
+    let createdAt: Date
     
-    init(name: String, items: [BundleItem] = []) {
+    init(name: String, items: [BundleItem] = [], createdAt: Date = .now) {
         self.name = name
         self.items = items
+        self.createdAt = createdAt
     }
     
-    public static let none = ShoppingBundle(name: "none")
+    public static let none = ShoppingBundle(name: "none", createdAt: Date.distantPast)
 }
 
 typealias BundleItem = String

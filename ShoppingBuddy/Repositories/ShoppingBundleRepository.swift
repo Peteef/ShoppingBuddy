@@ -14,7 +14,7 @@ final class ShoppingBundleRepository {
     
     func getAll() -> [ShoppingBundle] {
         do {
-            return try modelContext.fetch(FetchDescriptor<ShoppingBundle>())
+            return try modelContext.fetch(FetchDescriptor<ShoppingBundle>(sortBy: [SortDescriptor(\.createdAt)]))
         } catch {
             print("Could not fetch shopping bundles.")
             return []

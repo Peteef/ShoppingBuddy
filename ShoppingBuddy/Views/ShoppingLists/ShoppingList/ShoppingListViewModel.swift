@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class ShoppingListViewModel: ObservableObject {
     private let repository = Repositories.shoppingListRepository
 
     @Published var shoppingList: ShoppingList
     @Published var isError: Bool = false
-    
+
     @Published var isOpenNewItemModal: Bool = false
     @Published var isOpenAddBundleModal: Bool = false
 
@@ -24,15 +25,15 @@ final class ShoppingListViewModel: ObservableObject {
             self.isError = true
         }
     }
-    
+
     func moveItems(from: IndexSet, to: Int) {
         shoppingList.items.move(fromOffsets: from, toOffset: to)
     }
-    
+
     func removeItems(at: IndexSet) {
         shoppingList.items.remove(atOffsets: at)
     }
-    
+
     func removeCheckedItems() {
         shoppingList.items.removeAll(where: { item in item.checked })
     }

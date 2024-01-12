@@ -14,7 +14,7 @@ final class ShoppingListRepository {
     
     func getAll() -> [ShoppingList] {
         do {
-            return try modelContext.fetch(FetchDescriptor<ShoppingList>())
+            return try modelContext.fetch(FetchDescriptor<ShoppingList>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)]))
         } catch {
             print("Could not fetch shopping lists.")
             return []
