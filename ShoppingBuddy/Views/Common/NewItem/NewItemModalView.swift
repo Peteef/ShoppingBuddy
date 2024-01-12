@@ -49,5 +49,5 @@ struct NewItemModalView<T>: View where T: ContainingItems {
 }
 
 #Preview {
-    NewItemModalView(viewModel: NewItemModalViewModel(containingItems: .constant(Mocks.shoppingList), createItem: { ListItem(content: $0) }, onUpdate: {}), isOpen: .constant(true))
+    NewItemModalView(viewModel: NewItemModalViewModel(containingItems: .constant(Mocks.shoppingList), createItem: { ListItem(content: $0) }), isOpen: .constant(true))
 }

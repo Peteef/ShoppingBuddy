@@ -8,18 +8,9 @@
 import Foundation
 import SwiftData
 
-class ShoppingListRepository {
-    private let modelContainer: ModelContainer
-    private let modelContext: ModelContext
-
-    @MainActor
-    static let instance = ShoppingListRepository()
-
-    @MainActor
-    private init() {
-        self.modelContainer = try! ModelContainer(for: ShoppingList.self)
-        self.modelContext = modelContainer.mainContext
-    }
+final class ShoppingListRepository {
+    private let modelContainer = StorageConfiguration.config.modelContainer
+    private let modelContext = StorageConfiguration.config.modelContext
     
     func getAll() -> [ShoppingList] {
         do {
@@ -41,6 +32,4 @@ class ShoppingListRepository {
     func remove(shoppingList: ShoppingList) {
         modelContext.delete(shoppingList)
     }
-    
-    
 }

@@ -13,7 +13,7 @@ class ShoppingList: Identifiable, ContainingItems {
     typealias I = ListItem
     
     let name: String
-    var items: [ListItem]
+    @Relationship (deleteRule: .cascade) var items: [ListItem]
     let createdAt: Date
 
     init(name: String, items: [ListItem] = [], createdAt: Date = .now) {

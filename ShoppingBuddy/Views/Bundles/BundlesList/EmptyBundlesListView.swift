@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmptyBundlesListView: View {
-    @EnvironmentObject var viewModel: BundlesListViewModel
+    @Environment(BundlesListViewModel.self) var viewModel: BundlesListViewModel
     
     var body: some View {
         VStack {
@@ -32,5 +32,5 @@ struct EmptyBundlesListView: View {
 
 #Preview {
     EmptyBundlesListView()
-        .environmentObject(BundlesListViewModel(selectedBundle: .constant(Mocks.bundle)))
+        .environment(BundlesListViewModel())
 }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 final class AddBundleModalViewModel: ObservableObject {
-    private let bundleRepository: ShoppingBundleRepository = InMemoryRepository.bundleRepository
+    private let bundleRepository = Repositories.bundleRepository
 
     let onUpdate: () -> Void
     

@@ -8,7 +8,7 @@
 import Foundation
 
 final class NewListModalViewModel: ObservableObject {
-    private let repository = ShoppingListRepository.instance
+    private let repository = Repositories.shoppingListRepository
 
     @Published var name: String = ""
     @Published var showAlert: Bool = false

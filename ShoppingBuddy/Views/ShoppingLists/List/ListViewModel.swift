@@ -12,7 +12,7 @@ import SwiftData
 @Observable
 class ListViewModel {
     @ObservationIgnored
-    private let repository = ShoppingListRepository.instance
+    private let repository = Repositories.shoppingListRepository
     
     var shoppingLists: [ShoppingList] = []
     var isLoading: Bool = false

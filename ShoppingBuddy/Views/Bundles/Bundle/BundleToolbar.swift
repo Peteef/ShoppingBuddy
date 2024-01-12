@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct BundleToolbar: View {
-    @EnvironmentObject var viewModel: BundleViewModel
+    @Environment(BundlesNavigationViewModel.self) var viewModel: BundlesNavigationViewModel
     
     var body: some View {
         HStack {
             Button(String(localized: "bundle.backButton"), systemImage: "chevron.backward") {
                 withAnimation(.easeIn(duration: 0.2)) {
-                    viewModel.selected = nil
+                    viewModel.selectedBundle = nil
                 }
             }.padding()
             Spacer()
@@ -25,5 +25,5 @@ struct BundleToolbar: View {
 
 #Preview {
     BundleToolbar()
-        .environmentObject(BundleViewModel(of: .constant(Mocks.bundle)))
+        .environment(BundlesNavigationViewModel())
 }

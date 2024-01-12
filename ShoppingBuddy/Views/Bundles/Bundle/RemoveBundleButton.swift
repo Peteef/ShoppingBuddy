@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct RemoveBundleButton: View {
-    @EnvironmentObject var viewModel: BundleViewModel
+    @Environment(BundlesNavigationViewModel.self) var navigationViewModel: BundlesNavigationViewModel
+    @Environment(BundleViewModel.self) var viewModel: BundleViewModel
 
     @State var isOpenDialog: Bool = false
 
@@ -19,7 +20,7 @@ struct RemoveBundleButton: View {
             Button(String(localized: "bundle.removeBundle.confirmButton"), role: .destructive) {
                 viewModel.removeBundle()
                 withAnimation(.easeIn(duration: 0.2)) {
-                    viewModel.selected = nil
+                    navigationViewModel.selectedBundle = nil
                 }
             }
         }
@@ -29,5 +30,5 @@ struct RemoveBundleButton: View {
 
 #Preview {
     RemoveBundleButton()
-        .environmentObject(BundleViewModel(of: .constant(Mocks.bundle)))
+        .environment(BundleViewModel(of: .constant(Mocks.bundle)))
 }

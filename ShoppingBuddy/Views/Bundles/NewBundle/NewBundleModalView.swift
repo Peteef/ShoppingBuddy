@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewBundleModalView: View {
-    @StateObject var viewModel: NewBundleModalViewModel
+    @State var viewModel: NewBundleModalViewModel
     @Binding var isOpen: Bool
 
     @FocusState private var focusedBundleTextField: Bool

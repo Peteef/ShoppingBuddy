@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BundleView: View {
-    @StateObject var viewModel: BundleViewModel
+    @State var viewModel: BundleViewModel
 
     var body: some View {
         VStack {
@@ -27,13 +27,12 @@ struct BundleView: View {
             }
             Spacer()
         }
-        .environmentObject(viewModel)
+        .environment(viewModel)
         .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {
             NewItemModalView(
                 viewModel: NewItemModalViewModel<ShoppingBundle>(
                     containingItems: $viewModel.bundle,
-                    createItem: { $0 },
-                    onUpdate: viewModel.update
+                    createItem: { $0 }
                 ),
                 isOpen: $viewModel.isOpenNewItemModal
             )

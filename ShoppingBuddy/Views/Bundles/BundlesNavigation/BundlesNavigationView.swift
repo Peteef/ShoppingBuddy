@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct BundlesNavigationView: View {
-    @StateObject var viewModel: BundlesNavigationViewModel
+    @State var viewModel: BundlesNavigationViewModel
 
     var body: some View {
         ZStack {
             if viewModel.selectedBundle == nil {
-                BundlesListView(viewModel: BundlesListViewModel(
-                    selectedBundle: $viewModel.selectedBundle
-                ))
+                BundlesListView(viewModel: BundlesListViewModel())
                 .transition(.asymmetric(
                     insertion: .move(edge: .leading),
                     removal: .move(edge: .leading)
@@ -28,6 +26,7 @@ struct BundlesNavigationView: View {
                     ))
             }
         }
+        .environment(viewModel)
     }
 }
 

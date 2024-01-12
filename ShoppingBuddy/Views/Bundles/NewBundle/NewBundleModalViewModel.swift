@@ -8,11 +8,13 @@
 import Foundation
 import SwiftUI
 
-final class NewBundleModalViewModel: ObservableObject {
-    private let repository: ShoppingBundleRepository = InMemoryRepository.bundleRepository
+@Observable
+final class NewBundleModalViewModel {
+    @ObservationIgnored
+    private let repository = Repositories.bundleRepository
     
-    @Published var name: String = ""
-    @Published var showAlert: Bool = false
+    var name: String = ""
+    var showAlert: Bool = false
     
     var canAdd: Bool {
         return !name.trimmingCharacters(in: .whitespaces).isEmpty
@@ -24,7 +26,7 @@ final class NewBundleModalViewModel: ObservableObject {
             return
         }
         
-        try? repository.add(bundle: ShoppingBundle(name: name.trimmingCharacters(in: .whitespaces)))
+        repository.add(bundle: ShoppingBundle(name: name.trimmingCharacters(in: .whitespaces)))
         reset()
     }
     

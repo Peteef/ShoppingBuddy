@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BundleTileView: View {
-    @EnvironmentObject var viewModel: BundlesListViewModel
+    @Environment(BundlesNavigationViewModel.self) var viewModel: BundlesNavigationViewModel
     
     let of: ShoppingBundle
     
@@ -31,5 +31,5 @@ struct BundleTileView: View {
 
 #Preview {
     BundleTileView(of: Mocks.bundle)
-        .environmentObject(BundlesListViewModel(selectedBundle: .constant(Mocks.bundle)))
+        .environment(BundlesNavigationViewModel())
 }

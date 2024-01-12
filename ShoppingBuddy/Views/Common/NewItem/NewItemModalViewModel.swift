@@ -11,15 +11,13 @@ import SwiftUI
 final class NewItemModalViewModel<T>: ObservableObject where T: ContainingItems {
     @Binding var containingItems: T
     let createItem: (String) -> T.I
-    let onUpdate: () -> Void
     
     @Published var content: String = ""
     @Published var showAlert: Bool = false
     
-    init(containingItems: Binding<T>, createItem: @escaping (String) -> T.I, onUpdate: @escaping () -> Void) {
+    init(containingItems: Binding<T>, createItem: @escaping (String) -> T.I) {
         self._containingItems = containingItems
         self.createItem = createItem
-        self.onUpdate = onUpdate
     }
     
     var canAdd: Bool {
@@ -33,7 +31,6 @@ final class NewItemModalViewModel<T>: ObservableObject where T: ContainingItems 
         }
         
         containingItems.items.append(createItem(content.trimmingCharacters(in: .whitespaces)))
-        onUpdate()
         reset()
     }
     

@@ -44,8 +44,7 @@ struct ShoppingListView: View {
                 NewItemModalView(
                     viewModel: NewItemModalViewModel<ShoppingList>(
                         containingItems: $viewModel.shoppingList,
-                        createItem: { ListItem(content: $0) },
-                        onUpdate: {}
+                        createItem: { ListItem(content: $0) }
                     ),
                     isOpen: $viewModel.isOpenNewItemModal
                 )

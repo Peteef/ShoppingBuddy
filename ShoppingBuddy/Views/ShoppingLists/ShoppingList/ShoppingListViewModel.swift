@@ -8,7 +8,7 @@
 import Foundation
 
 final class ShoppingListViewModel: ObservableObject {
-    private let repository = ShoppingListRepository.instance
+    private let repository = Repositories.shoppingListRepository
 
     @Published var shoppingList: ShoppingList
     @Published var isError: Bool = false

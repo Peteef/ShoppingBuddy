@@ -7,6 +7,7 @@
 
 import Foundation
 
-final class BundlesNavigationViewModel: ObservableObject {
-    @Published var selectedBundle: ShoppingBundle? = nil
+@Observable
+final class BundlesNavigationViewModel {
+    var selectedBundle: ShoppingBundle? = nil
 }

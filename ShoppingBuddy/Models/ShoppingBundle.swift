@@ -1,21 +1,21 @@
 //
-//  Bundle.swift
+//  ShoppingBundle.swift
 //  ShoppingBuddy
 //
 //  Created by Kamil Turek on 19/12/2023.
 //
 
 import Foundation
+import SwiftData
 
-struct ShoppingBundle: Identifiable, Hashable, ContainingItems {
+@Model
+class ShoppingBundle: Identifiable, Hashable, ContainingItems {
     typealias I = BundleItem
     
-    let id: String
     let name: String
-    var items: [BundleItem]
+    @Relationship (deleteRule: .cascade) var items: [BundleItem]
     
-    init(id: String = NSUUID().uuidString.lowercased(), name: String, items: [BundleItem] = []) {
-        self.id = id
+    init(name: String, items: [BundleItem] = []) {
         self.name = name
         self.items = items
     }
