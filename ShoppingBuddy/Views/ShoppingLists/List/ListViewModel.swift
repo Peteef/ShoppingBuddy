@@ -33,5 +33,6 @@ class ListViewModel {
         indexes.forEach { index in
             repository.remove(shoppingList: shoppingLists[index])
         }
+        shoppingLists.remove(atOffsets: indexes)
     }
 }

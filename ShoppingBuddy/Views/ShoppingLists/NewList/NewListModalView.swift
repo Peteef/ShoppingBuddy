@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewListModalView: View {
-    @StateObject var viewModel: NewListModalViewModel
+    @State var viewModel: NewListModalViewModel
     @Binding var isOpen: Bool
 
     @FocusState private var focusedNameTextField: Bool

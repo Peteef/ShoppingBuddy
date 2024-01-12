@@ -33,9 +33,6 @@ struct ListView: View {
                     NewListModalView(viewModel: NewListModalViewModel(), isOpen: $viewModel.isOpenNewListModal)
                 })
             }
-            .onAppear {
-                viewModel.load()
-            }
             .onChange(of: viewModel.isOpenNewListModal) {
                 if !viewModel.isOpenNewListModal {
                     viewModel.load()

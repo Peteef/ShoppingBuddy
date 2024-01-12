@@ -7,11 +7,12 @@
 
 import Foundation
 
-final class NewListModalViewModel: ObservableObject {
+@Observable
+final class NewListModalViewModel {
     private let repository = Repositories.shoppingListRepository
 
-    @Published var name: String = ""
-    @Published var showAlert: Bool = false
+    var name: String = ""
+    var showAlert: Bool = false
 
     var canAdd: Bool {
         return !name.trimmingCharacters(in: .whitespaces).isEmpty
