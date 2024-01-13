@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ClearDoneButton: View {
-    let onClear: () -> Void
+    @Environment(ShoppingListViewModel.self) var viewModel: ShoppingListViewModel
 
     @State var isOpenDialog: Bool = false
 
@@ -16,7 +16,7 @@ struct ClearDoneButton: View {
         Button(String(localized: "shoppingList.clearDoneButton")) {
             isOpenDialog = true
         }.confirmationDialog("shoppingList.clearDone.confirmation", isPresented: $isOpenDialog, titleVisibility: .visible) {
-            Button(String(localized: "shoppingList.clearDone.confirmButton"), role: .destructive, action: onClear)
+            Button(String(localized: "shoppingList.clearDone.confirmButton"), role: .destructive, action: viewModel.removeCheckedItems)
         }
     }
 }

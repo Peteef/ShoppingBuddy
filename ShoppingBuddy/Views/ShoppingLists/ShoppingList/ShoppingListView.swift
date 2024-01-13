@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShoppingListView: View {
-    @StateObject var viewModel: ShoppingListViewModel
+    @State var viewModel: ShoppingListViewModel
 
     var body: some View {
         if !viewModel.isError {
@@ -26,7 +26,7 @@ struct ShoppingListView: View {
                 } else {
                     List {
                         ForEach($viewModel.shoppingList.items, id: \.content) { item in
-                            ShoppingListItemView(item: item, onToggle: {})
+                            ShoppingListItemView(item: item)
                         }
                         .onMove(perform: viewModel.moveItems)
                         .onDelete(perform: viewModel.removeItems)
@@ -35,7 +35,7 @@ struct ShoppingListView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    ClearDoneButton(onClear: viewModel.removeCheckedItems)
+                    ClearDoneButton()
                     AddItemButton(isOpenModal: $viewModel.isOpenNewItemModal)
                     AddBundleButton(isOpenModal: $viewModel.isOpenAddBundleModal)
                 }
@@ -58,10 +58,13 @@ struct ShoppingListView: View {
                     isOpen: $viewModel.isOpenAddBundleModal
                 )
             })
+            .environment(viewModel)
         }
+       
     }
 }
 
-#Preview {
-    ShoppingListView(viewModel: ShoppingListViewModel(of: Mocks.shoppingList))
-}
+// TODO: Fix previews depending on state
+// #Preview {
+//    ShoppingListView(viewModel: ShoppingListViewModel(of: Mocks.shoppingList))
+// }

@@ -8,14 +8,16 @@
 import Foundation
 import SwiftUI
 
-final class ShoppingListViewModel: ObservableObject {
+@Observable
+final class ShoppingListViewModel {
+    @ObservationIgnored
     private let repository = Repositories.shoppingListRepository
 
-    @Published var shoppingList: ShoppingList
-    @Published var isError: Bool = false
+    var shoppingList: ShoppingList
+    var isError: Bool = false
 
-    @Published var isOpenNewItemModal: Bool = false
-    @Published var isOpenAddBundleModal: Bool = false
+    var isOpenNewItemModal: Bool = false
+    var isOpenAddBundleModal: Bool = false
 
     init(of: ShoppingList) {
         if let fromRepository = repository.get(id: of.id) {

@@ -9,18 +9,15 @@ import SwiftUI
 
 struct ShoppingListItemView: View {
     @Binding var item: ListItem
-    
-    let onToggle: () -> Void
+
     
     var body: some View {
         Toggle(isOn: $item.checked, label: {
             Text(item.content)
-        }).onChange(of: item.checked) {
-            onToggle()
-        }.toggleStyle(BagCheckbox())
+        }).toggleStyle(BagCheckbox())
     }
 }
 
 #Preview {
-    ShoppingListItemView(item: .constant(Mocks.item), onToggle: {})
+    ShoppingListItemView(item: .constant(Mocks.item))
 }
