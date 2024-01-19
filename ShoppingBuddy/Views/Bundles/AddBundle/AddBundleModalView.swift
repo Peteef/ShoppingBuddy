@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddBundleModalView: View {
-    @StateObject var viewModel: AddBundleModalViewModel
+    @State var viewModel: AddBundleModalViewModel
     @Binding var isOpen: Bool
 
     var body: some View {
@@ -35,5 +35,5 @@ struct AddBundleModalView: View {
 }
 
 #Preview {
-    AddBundleModalView(viewModel: AddBundleModalViewModel(shoppingList: .constant(Mocks.shoppingList), onUpdate: { print("Updated") } ), isOpen: .constant(true))
+    AddBundleModalView(viewModel: AddBundleModalViewModel(shoppingList: Mocks.shoppingList), isOpen: .constant(true))
 }

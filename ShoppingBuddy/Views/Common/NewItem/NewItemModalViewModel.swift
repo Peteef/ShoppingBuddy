@@ -8,15 +8,16 @@
 import Foundation
 import SwiftUI
 
-final class NewItemModalViewModel<T>: ObservableObject where T: ContainingItems {
-    @Binding var containingItems: T
+@Observable
+final class NewItemModalViewModel<T> where T: ContainingItems {
+    var containingItems: T
     let createItem: (String) -> T.I
     
-    @Published var content: String = ""
-    @Published var showAlert: Bool = false
+    var content: String = ""
+    var showAlert: Bool = false
     
-    init(containingItems: Binding<T>, createItem: @escaping (String) -> T.I) {
-        self._containingItems = containingItems
+    init(containingItems: T, createItem: @escaping (String) -> T.I) {
+        self.containingItems = containingItems
         self.createItem = createItem
     }
     

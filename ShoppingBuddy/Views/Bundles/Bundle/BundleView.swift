@@ -31,7 +31,7 @@ struct BundleView: View {
         .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {
             NewItemModalView(
                 viewModel: NewItemModalViewModel<ShoppingBundle>(
-                    containingItems: $viewModel.bundle,
+                    containingItems: viewModel.bundle,
                     createItem: { $0 }
                 ),
                 isOpen: $viewModel.isOpenNewItemModal

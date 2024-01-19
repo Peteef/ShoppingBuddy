@@ -8,22 +8,20 @@
 import Foundation
 import SwiftUI
 
-final class AddBundleModalViewModel: ObservableObject {
+@Observable
+final class AddBundleModalViewModel {
     private let bundleRepository = Repositories.bundleRepository
-
-    let onUpdate: () -> Void
     
-    @Binding var shoppingList: ShoppingList
+    var shoppingList: ShoppingList
     
-    @Published var bundles: [ShoppingBundle]
-    @Published var selected: ShoppingBundle
+    var bundles: [ShoppingBundle]
+    var selected: ShoppingBundle
     
-    init(shoppingList: Binding<ShoppingList>, onUpdate: @escaping () -> Void) {
+    init(shoppingList: ShoppingList) {
         let bundles = bundleRepository.getAll()
         self.bundles = bundles
         self.selected = bundles.first ?? .none // TODO: Figure out the safer way
-        self._shoppingList = shoppingList
-        self.onUpdate = onUpdate
+        self.shoppingList = shoppingList
     }
     
     func addItems() {
@@ -32,7 +30,6 @@ final class AddBundleModalViewModel: ObservableObject {
             .map { ListItem(content: $0) }
         
         shoppingList.items.append(contentsOf: items)
-        onUpdate()
         reset()
     }
     
