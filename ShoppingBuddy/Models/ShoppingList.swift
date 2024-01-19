@@ -12,13 +12,22 @@ import SwiftData
 class ShoppingList: Identifiable, ContainingItems {
     typealias I = ListItem
     
+    private var _items: [ListItem]
+    
     let name: String
-    @Relationship (deleteRule: .cascade) var items: [ListItem]
+    @Relationship (deleteRule: .cascade) var items: [ListItem] {
+        get {
+            return self._items.sorted(by: {$0.createdAt < $1.createdAt})
+        }
+        set {
+            self._items = newValue
+        }
+    }
     let createdAt: Date
 
     init(name: String, items: [ListItem] = [], createdAt: Date = .now) {
         self.name = name
-        self.items = items
+        self._items = items
         self.createdAt = createdAt
     }
 
