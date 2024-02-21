@@ -16,7 +16,7 @@ struct ListView: View {
                 List {
                     ForEach(viewModel.shoppingLists, id: \.id) { shoppingList in
                         NavigationLink {
-                            ShoppingListView(viewModel: ShoppingListViewModel(of: shoppingList))
+                            ShoppingListView(viewModel: ShoppingListViewModel(of: shoppingList, repository: Repositories.shoppingListRepository))
                         } label: {
                             ListElementView(of: shoppingList)
                         }

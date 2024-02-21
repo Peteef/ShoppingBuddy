@@ -11,7 +11,7 @@ import SwiftUI
 @Observable
 final class ShoppingListViewModel {
     @ObservationIgnored
-    private let repository = Repositories.shoppingListRepository
+    private let repository: ShoppingListRepository
 
     var shoppingList: ShoppingList
     var isError: Bool = false
@@ -19,17 +19,14 @@ final class ShoppingListViewModel {
     var isOpenNewItemModal: Bool = false
     var isOpenAddBundleModal: Bool = false
 
-    init(of: ShoppingList) {
+    init(of: ShoppingList, repository: ShoppingListRepository) {
+        self.repository = repository
         if let fromRepository = repository.get(id: of.id) {
             self.shoppingList = fromRepository
         } else {
             self.shoppingList = .none
             self.isError = true
         }
-    }
-
-    func moveItems(from: IndexSet, to: Int) {
-        shoppingList.items.move(fromOffsets: from, toOffset: to)
     }
 
     func removeItems(at: IndexSet) {

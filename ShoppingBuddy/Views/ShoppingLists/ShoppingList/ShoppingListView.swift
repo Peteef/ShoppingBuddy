@@ -28,7 +28,6 @@ struct ShoppingListView: View {
                         ForEach($viewModel.shoppingList.items, id: \.content) { item in
                             ShoppingListItemView(item: item)
                         }
-                        .onMove(perform: viewModel.moveItems)
                         .onDelete(perform: viewModel.removeItems)
                     }.listStyle(.plain)
                 }
