@@ -11,7 +11,7 @@ import SwiftData
 struct MainView: View {
     var body: some View {
         TabView {
-            ListView(viewModel: ListViewModel())
+            ListView(viewModel: ListViewModel(repository: Repositories.shoppingListRepository))
                 .tabItem {
                     Image(systemName: "cart")
                     Text("tabs.lists")

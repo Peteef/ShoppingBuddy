@@ -5,31 +5,67 @@
 //  Created by Kamil Turek on 08/02/2024.
 //
 
+@testable import ShoppingBuddy
 import XCTest
 
 final class ListViewModelTest: XCTestCase {
-
+    var shoppingListRepository = ShoppingListRepositoryMock()
+    var viewModel: ListViewModel!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = ListViewModel(repository: shoppingListRepository)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
+        shoppingListRepository.resetInvocations()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testShouldLoadUsingRepository() {
+        // Given
+        shoppingListRepository.resetInvocations() // Ignore initial load
+        let all = [ShoppingList(name: "test list")]
+        shoppingListRepository.whenGetAll = all
+        
+        // When
+        viewModel.load()
+        
+        // Then
+        XCTAssert(shoppingListRepository.wasCalled(name: "getAll()"))
+        XCTAssertEqual(viewModel.shoppingLists, all)
+        XCTAssertFalse(viewModel.isLoading)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testShouldLoadOnInit() {
+        // Given
+        shoppingListRepository.resetInvocations() // Ignore initial load
+        let all = [ShoppingList(name: "test list")]
+        shoppingListRepository.whenGetAll = all
+        
+        // When
+        viewModel = ListViewModel(repository: shoppingListRepository)
+        
+        // Then
+        XCTAssert(shoppingListRepository.wasCalled(name: "getAll()"))
+        XCTAssertEqual(viewModel.shoppingLists, all)
     }
-
+    
+    func testShouldRemoveMultipleLists() {
+        // Given
+        let all = [
+            ShoppingList(name: "test list"),
+            ShoppingList(name: "other list"),
+            ShoppingList(name: "another list"),
+        ]
+        shoppingListRepository.whenGetAll = all
+        viewModel.load()
+        
+        // When
+        viewModel.removeList(at: IndexSet(arrayLiteral: 0, 2))
+        
+        // Then
+        XCTAssert(shoppingListRepository.wasCalled(name: "remove(shoppingList:)", times: 2))
+        XCTAssertEqual(viewModel.shoppingLists.count, 1)
+        XCTAssertEqual(viewModel.shoppingLists, [all[1]])
+    }
 }

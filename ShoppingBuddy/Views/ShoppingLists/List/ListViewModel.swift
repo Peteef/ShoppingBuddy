@@ -12,14 +12,15 @@ import SwiftData
 @Observable
 class ListViewModel {
     @ObservationIgnored
-    private let repository = Repositories.shoppingListRepository
+    private let repository: ShoppingListRepository
     
     var shoppingLists: [ShoppingList] = []
     var isLoading: Bool = false
 
     var isOpenNewListModal: Bool = false
     
-    init() {
+    init(repository: ShoppingListRepository) {
+        self.repository = repository
         load()
     }
 

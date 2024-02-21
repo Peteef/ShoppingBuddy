@@ -47,5 +47,5 @@ struct ListView: View {
 }
 
 #Preview {
-    ListView(viewModel: ListViewModel())
+    ListView(viewModel: ListViewModel(repository: Repositories.shoppingListRepository))
 }

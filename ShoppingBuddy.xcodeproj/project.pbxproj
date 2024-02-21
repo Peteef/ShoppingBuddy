@@ -27,12 +27,15 @@
 		8B49FEE72B3FB2CD008881BB /* AddBundleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEE62B3FB2CD008881BB /* AddBundleModalView.swift */; };
 		8B49FEE92B3FB2E2008881BB /* AddBundleModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEE82B3FB2E2008881BB /* AddBundleModalViewModel.swift */; };
 		8B49FEFB2B4CC3E3008881BB /* BundleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEFA2B4CC3E3008881BB /* BundleToolbar.swift */; };
-		8B49FEFF2B4E3157008881BB /* ShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEFE2B4E3157008881BB /* ShoppingListRepository.swift */; };
+		8B49FEFF2B4E3157008881BB /* DatabaseShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FEFE2B4E3157008881BB /* DatabaseShoppingListRepository.swift */; };
 		8B49FF012B50C577008881BB /* StorageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FF002B50C577008881BB /* StorageConfiguration.swift */; };
 		8B49FF032B50C765008881BB /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49FF022B50C765008881BB /* Repositories.swift */; };
 		8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7814802B2E945E00C472ED /* ClearDoneButton.swift */; };
 		8B8C8F942B754675007C2364 /* NewItemModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F932B754675007C2364 /* NewItemModalViewModelTest.swift */; };
 		8B8C8F982B754EDA007C2364 /* ListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F972B754EDA007C2364 /* ListViewModelTest.swift */; };
+		8B8C8F9A2B755A14007C2364 /* ShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F992B755A14007C2364 /* ShoppingListRepository.swift */; };
+		8B8C8F9D2B755CA7007C2364 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F9C2B755CA7007C2364 /* Mock.swift */; };
+		8B8C8F9F2B855EF8007C2364 /* ShoppingListRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F9E2B855EF8007C2364 /* ShoppingListRepositoryMock.swift */; };
 		8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */; };
 		8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D72B265962007B2FA5 /* MainView.swift */; };
 		8BD7E9DA2B265963007B2FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D92B265963007B2FA5 /* Assets.xcassets */; };
@@ -86,13 +89,16 @@
 		8B49FEE62B3FB2CD008881BB /* AddBundleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBundleModalView.swift; sourceTree = "<group>"; };
 		8B49FEE82B3FB2E2008881BB /* AddBundleModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBundleModalViewModel.swift; sourceTree = "<group>"; };
 		8B49FEFA2B4CC3E3008881BB /* BundleToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleToolbar.swift; sourceTree = "<group>"; };
-		8B49FEFE2B4E3157008881BB /* ShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepository.swift; sourceTree = "<group>"; };
+		8B49FEFE2B4E3157008881BB /* DatabaseShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseShoppingListRepository.swift; sourceTree = "<group>"; };
 		8B49FF002B50C577008881BB /* StorageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageConfiguration.swift; sourceTree = "<group>"; };
 		8B49FF022B50C765008881BB /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		8B7814802B2E945E00C472ED /* ClearDoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearDoneButton.swift; sourceTree = "<group>"; };
 		8B8C8F872B75439D007C2364 /* ShoppingBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8C8F932B754675007C2364 /* NewItemModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemModalViewModelTest.swift; sourceTree = "<group>"; };
 		8B8C8F972B754EDA007C2364 /* ListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTest.swift; sourceTree = "<group>"; };
+		8B8C8F992B755A14007C2364 /* ShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepository.swift; sourceTree = "<group>"; };
+		8B8C8F9C2B755CA7007C2364 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		8B8C8F9E2B855EF8007C2364 /* ShoppingListRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepositoryMock.swift; sourceTree = "<group>"; };
 		8BD7E9D22B265962007B2FA5 /* ShoppingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBuddy.swift; sourceTree = "<group>"; };
 		8BD7E9D72B265962007B2FA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -261,6 +267,7 @@
 		8B8C8F882B75439D007C2364 /* ShoppingBuddyTests */ = {
 			isa = PBXGroup;
 			children = (
+				8B8C8F9B2B755C41007C2364 /* Mocks */,
 				8B8C8F902B754636007C2364 /* Views */,
 			);
 			path = ShoppingBuddyTests;
@@ -305,6 +312,15 @@
 				8B8C8F972B754EDA007C2364 /* ListViewModelTest.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		8B8C8F9B2B755C41007C2364 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8B8C8F9C2B755CA7007C2364 /* Mock.swift */,
+				8B8C8F9E2B855EF8007C2364 /* ShoppingListRepositoryMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		8BD7E9C92B265962007B2FA5 = {
@@ -375,9 +391,10 @@
 			isa = PBXGroup;
 			children = (
 				8B49FEC32B311BA9008881BB /* ShoppingBundleRepository.swift */,
-				8B49FEFE2B4E3157008881BB /* ShoppingListRepository.swift */,
+				8B49FEFE2B4E3157008881BB /* DatabaseShoppingListRepository.swift */,
 				8B49FF002B50C577008881BB /* StorageConfiguration.swift */,
 				8B49FF022B50C765008881BB /* Repositories.swift */,
+				8B8C8F992B755A14007C2364 /* ShoppingListRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -485,6 +502,8 @@
 			files = (
 				8B8C8F982B754EDA007C2364 /* ListViewModelTest.swift in Sources */,
 				8B8C8F942B754675007C2364 /* NewItemModalViewModelTest.swift in Sources */,
+				8B8C8F9F2B855EF8007C2364 /* ShoppingListRepositoryMock.swift in Sources */,
+				8B8C8F9D2B755CA7007C2364 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +523,7 @@
 				8B49FEDB2B3DD5A0008881BB /* ContainingItems.swift in Sources */,
 				8BD7EA0A2B2934E0007B2FA5 /* NewListModalViewModel.swift in Sources */,
 				8B49FEE12B3FAF50008881BB /* NewBundleTileView.swift in Sources */,
-				8B49FEFF2B4E3157008881BB /* ShoppingListRepository.swift in Sources */,
+				8B49FEFF2B4E3157008881BB /* DatabaseShoppingListRepository.swift in Sources */,
 				8BD7E9F42B268797007B2FA5 /* ShoppingListView.swift in Sources */,
 				8B49FEBE2B3118C9008881BB /* EmptyBundlesListView.swift in Sources */,
 				8BD7E9EF2B26721D007B2FA5 /* ShoppingList.swift in Sources */,
@@ -515,6 +534,7 @@
 				8B49FEFB2B4CC3E3008881BB /* BundleToolbar.swift in Sources */,
 				8B49FEDD2B3FAAFB008881BB /* RemoveBundleButton.swift in Sources */,
 				8BD7EA132B2BD779007B2FA5 /* AddItemButton.swift in Sources */,
+				8B8C8F9A2B755A14007C2364 /* ShoppingListRepository.swift in Sources */,
 				8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */,
 				8B49FEC42B311BA9008881BB /* ShoppingBundleRepository.swift in Sources */,
 				8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */,
