@@ -49,5 +49,5 @@ struct NewListModalView: View {
 }
 
 #Preview {
-    NewListModalView(viewModel: NewListModalViewModel(), isOpen: .constant(true))
+    NewListModalView(viewModel: NewListModalViewModel(repository: Repositories.shoppingListRepository), isOpen: .constant(true))
 }

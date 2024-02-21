@@ -12,12 +12,16 @@ class Mock {
     private var invocations: [String:Int] = [:]
     
     func wasCalled(name: String, times: Int = 1) -> Bool {
-        guard invocations[name] == times else {
+        guard invocations[name, default: 0] == times else {
             return false
         }
         
         invocations[name] = 0
         return true
+    }
+    
+    func wasNotCalled(name: String) -> Bool {
+        wasCalled(name: name, times: 0)
     }
     
     func resetInvocations() {

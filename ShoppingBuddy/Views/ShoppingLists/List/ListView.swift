@@ -30,7 +30,7 @@ struct ListView: View {
                 .listRowSpacing(16)
                 .navigationTitle(String(localized: "appName"))
                 .sheet(isPresented: $viewModel.isOpenNewListModal, content: {
-                    NewListModalView(viewModel: NewListModalViewModel(), isOpen: $viewModel.isOpenNewListModal)
+                    NewListModalView(viewModel: NewListModalViewModel(repository: Repositories.shoppingListRepository), isOpen: $viewModel.isOpenNewListModal)
                 })
             }
             .onChange(of: viewModel.isOpenNewListModal) {

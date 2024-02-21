@@ -9,10 +9,14 @@ import Foundation
 
 @Observable
 final class NewListModalViewModel {
-    private let repository = Repositories.shoppingListRepository
+    private let repository: ShoppingListRepository
 
     var name: String = ""
     var showAlert: Bool = false
+    
+    init(repository: ShoppingListRepository) {
+        self.repository = repository
+    }
 
     var canAdd: Bool {
         return !name.trimmingCharacters(in: .whitespaces).isEmpty
