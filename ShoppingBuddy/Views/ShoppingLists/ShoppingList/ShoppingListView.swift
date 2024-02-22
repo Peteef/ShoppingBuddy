@@ -51,7 +51,8 @@ struct ShoppingListView: View {
             .sheet(isPresented: $viewModel.isOpenAddBundleModal, content: {
                 AddBundleModalView(
                     viewModel: AddBundleModalViewModel(
-                        shoppingList: viewModel.shoppingList
+                        shoppingList: viewModel.shoppingList,
+                        repository: Repositories.bundleRepository
                     ),
                     isOpen: $viewModel.isOpenAddBundleModal
                 )

@@ -10,14 +10,15 @@ import SwiftUI
 
 @Observable
 final class AddBundleModalViewModel {
-    private let bundleRepository = Repositories.bundleRepository
+    private let bundleRepository: ShoppingBundleRepository
     
     var shoppingList: ShoppingList
     
     var bundles: [ShoppingBundle]
     var selected: ShoppingBundle
     
-    init(shoppingList: ShoppingList) {
+    init(shoppingList: ShoppingList, repository: ShoppingBundleRepository) {
+        self.bundleRepository = repository
         let bundles = bundleRepository.getAll()
         self.bundles = bundles
         self.selected = bundles.first ?? .none // TODO: Figure out the safer way

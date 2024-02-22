@@ -35,5 +35,5 @@ struct AddBundleModalView: View {
 }
 
 #Preview {
-    AddBundleModalView(viewModel: AddBundleModalViewModel(shoppingList: Mocks.shoppingList), isOpen: .constant(true))
+    AddBundleModalView(viewModel: AddBundleModalViewModel(shoppingList: Mocks.shoppingList, repository: Repositories.bundleRepository), isOpen: .constant(true))
 }

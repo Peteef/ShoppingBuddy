@@ -8,7 +8,7 @@
 import XCTest
 @testable import ShoppingBuddy
 
-final class ShoppingListViewModelTest: XCTestCase {
+final class ShoppingListViewModelTest: TestRequireModelContextSync {
     var shoppingListRepository = ShoppingListRepositoryMock()
     var viewModel: ShoppingListViewModel!
 
@@ -109,11 +109,5 @@ final class ShoppingListViewModelTest: XCTestCase {
             viewModel.shoppingList.items.map(\.content),
             ["item 1", "item 2", "item 3", "item 4"]
         )
-    }
-    
-    // Needed in order to make SwiftData model working with updates
-    // TODO: Think of a way to not be dependent on SwiftData code
-    @MainActor private func syncWithModelContext(_ list: ShoppingList) {
-        StorageConfiguration.config.modelContext.insert(list)
     }
 }

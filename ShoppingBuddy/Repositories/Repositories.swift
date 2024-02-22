@@ -9,5 +9,5 @@ import Foundation
 
 struct Repositories {
     static let shoppingListRepository: ShoppingListRepository = DatabaseShoppingListRepository()
-    static let bundleRepository: ShoppingBundleRepository = ShoppingBundleRepository()
+    static let bundleRepository: ShoppingBundleRepository = DatabaseShoppingBundleRepository()
 }
