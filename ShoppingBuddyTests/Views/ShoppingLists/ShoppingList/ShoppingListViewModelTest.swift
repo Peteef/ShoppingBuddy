@@ -8,7 +8,7 @@
 import XCTest
 @testable import ShoppingBuddy
 
-final class ShoppingListViewModelTest: TestRequireModelContextSync {
+final class ShoppingListViewModelTest: TestRequiresModelContextSync {
     var shoppingListRepository = ShoppingListRepositoryMock()
     var viewModel: ShoppingListViewModel!
 

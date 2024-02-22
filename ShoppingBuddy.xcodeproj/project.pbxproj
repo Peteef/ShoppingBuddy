@@ -41,7 +41,7 @@
 		8BAE165D2B86BF5200656608 /* AddBundleModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE165C2B86BF5200656608 /* AddBundleModalViewModelTest.swift */; };
 		8BAE165F2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE165E2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift */; };
 		8BAE16612B86C0D800656608 /* ShoppingBundleRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE16602B86C0D800656608 /* ShoppingBundleRepositoryMock.swift */; };
-		8BAE16642B86C49D00656608 /* TestRequireModelContextSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE16632B86C49D00656608 /* TestRequireModelContextSync.swift */; };
+		8BAE16642B86C49D00656608 /* TestRequiresModelContextSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE16632B86C49D00656608 /* TestRequiresModelContextSync.swift */; };
 		8BAE16662B86C77A00656608 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE16652B86C77A00656608 /* Assertions.swift */; };
 		8BD7E9D62B265962007B2FA5 /* ShoppingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */; };
 		8BD7E9D82B265962007B2FA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7E9D72B265962007B2FA5 /* MainView.swift */; };
@@ -111,7 +111,7 @@
 		8BAE165C2B86BF5200656608 /* AddBundleModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBundleModalViewModelTest.swift; sourceTree = "<group>"; };
 		8BAE165E2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseShoppingBundleRepository.swift; sourceTree = "<group>"; };
 		8BAE16602B86C0D800656608 /* ShoppingBundleRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBundleRepositoryMock.swift; sourceTree = "<group>"; };
-		8BAE16632B86C49D00656608 /* TestRequireModelContextSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequireModelContextSync.swift; sourceTree = "<group>"; };
+		8BAE16632B86C49D00656608 /* TestRequiresModelContextSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequiresModelContextSync.swift; sourceTree = "<group>"; };
 		8BAE16652B86C77A00656608 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		8BD7E9D22B265962007B2FA5 /* ShoppingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD7E9D52B265962007B2FA5 /* ShoppingBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBuddy.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 		8BAE16622B86C46200656608 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				8BAE16632B86C49D00656608 /* TestRequireModelContextSync.swift */,
+				8BAE16632B86C49D00656608 /* TestRequiresModelContextSync.swift */,
 				8BAE16652B86C77A00656608 /* Assertions.swift */,
 			);
 			path = Test;
@@ -564,7 +564,7 @@
 				8BAE165D2B86BF5200656608 /* AddBundleModalViewModelTest.swift in Sources */,
 				8B8C8F982B754EDA007C2364 /* ListViewModelTest.swift in Sources */,
 				8BAE16592B86B87C00656608 /* NewListModalViewModelTest.swift in Sources */,
-				8BAE16642B86C49D00656608 /* TestRequireModelContextSync.swift in Sources */,
+				8BAE16642B86C49D00656608 /* TestRequiresModelContextSync.swift in Sources */,
 				8B8C8F942B754675007C2364 /* NewItemModalViewModelTest.swift in Sources */,
 				8B8C8FA22B86A0A2007C2364 /* ShoppingListViewModelTest.swift in Sources */,
 				8BAE16612B86C0D800656608 /* ShoppingBundleRepositoryMock.swift in Sources */,
