@@ -13,15 +13,16 @@ import SwiftUI
 @Observable
 final class BundleViewModel {
     @ObservationIgnored
-    private let repository = Repositories.bundleRepository
+    private let repository: ShoppingBundleRepository
 
     var bundle: ShoppingBundle
     var isError: Bool = false
     
     var isOpenNewItemModal: Bool = false
 
-    init(of: Binding<ShoppingBundle?>) {
-        if let fromRepository = repository.get(id: of.wrappedValue!.id) {
+    init(of: Binding<ShoppingBundle?>, repository: ShoppingBundleRepository) {
+        self.repository = repository
+        if let fromRepository = of.wrappedValue != nil ? repository.get(id: of.wrappedValue!.id) : nil {
             self.bundle = fromRepository
         } else {
             self.bundle = .none

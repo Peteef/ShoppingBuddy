@@ -30,5 +30,5 @@ struct RemoveBundleButton: View {
 
 #Preview {
     RemoveBundleButton()
-        .environment(BundleViewModel(of: .constant(Mocks.bundle)))
+        .environment(BundleViewModel(of: .constant(Mocks.bundle), repository: Repositories.bundleRepository))
 }

@@ -41,5 +41,5 @@ struct BundleView: View {
 }
 
 #Preview {
-    BundleView(viewModel: BundleViewModel(of: .constant(Mocks.bundle)))
+    BundleView(viewModel: BundleViewModel(of: .constant(Mocks.bundle), repository: Repositories.bundleRepository))
 }

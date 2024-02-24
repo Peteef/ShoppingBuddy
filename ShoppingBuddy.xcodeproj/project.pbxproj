@@ -39,6 +39,7 @@
 		8B8C8FA22B86A0A2007C2364 /* ShoppingListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8FA12B86A0A2007C2364 /* ShoppingListViewModelTest.swift */; };
 		8BA0EFD72B8A9AFC00BFB9CB /* NewBundleModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0EFD62B8A9AFC00BFB9CB /* NewBundleModalViewModelTest.swift */; };
 		8BA0EFDA2B8AABC100BFB9CB /* BundlesListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0EFD92B8AABC100BFB9CB /* BundlesListViewModelTest.swift */; };
+		8BA0EFDD2B8AAE3800BFB9CB /* BundleViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0EFDC2B8AAE3800BFB9CB /* BundleViewModelTest.swift */; };
 		8BAE16592B86B87C00656608 /* NewListModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE16582B86B87C00656608 /* NewListModalViewModelTest.swift */; };
 		8BAE165D2B86BF5200656608 /* AddBundleModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE165C2B86BF5200656608 /* AddBundleModalViewModelTest.swift */; };
 		8BAE165F2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE165E2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift */; };
@@ -111,6 +112,7 @@
 		8B8C8FA12B86A0A2007C2364 /* ShoppingListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModelTest.swift; sourceTree = "<group>"; };
 		8BA0EFD62B8A9AFC00BFB9CB /* NewBundleModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBundleModalViewModelTest.swift; sourceTree = "<group>"; };
 		8BA0EFD92B8AABC100BFB9CB /* BundlesListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlesListViewModelTest.swift; sourceTree = "<group>"; };
+		8BA0EFDC2B8AAE3800BFB9CB /* BundleViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleViewModelTest.swift; sourceTree = "<group>"; };
 		8BAE16582B86B87C00656608 /* NewListModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListModalViewModelTest.swift; sourceTree = "<group>"; };
 		8BAE165C2B86BF5200656608 /* AddBundleModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBundleModalViewModelTest.swift; sourceTree = "<group>"; };
 		8BAE165E2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseShoppingBundleRepository.swift; sourceTree = "<group>"; };
@@ -370,6 +372,14 @@
 			path = BundlesList;
 			sourceTree = "<group>";
 		};
+		8BA0EFDB2B8AAE2000BFB9CB /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				8BA0EFDC2B8AAE3800BFB9CB /* BundleViewModelTest.swift */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
 		8BAE16572B86B86400656608 /* NewList */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +391,7 @@
 		8BAE165A2B86BF2600656608 /* Bundles */ = {
 			isa = PBXGroup;
 			children = (
+				8BA0EFDB2B8AAE2000BFB9CB /* Bundle */,
 				8BA0EFD82B8AABA900BFB9CB /* BundlesList */,
 				8BA0EFD52B8A9AA100BFB9CB /* NewBundle */,
 				8BAE165B2B86BF3100656608 /* AddBundle */,
@@ -587,6 +598,7 @@
 				8B8C8F982B754EDA007C2364 /* ListViewModelTest.swift in Sources */,
 				8BAE16592B86B87C00656608 /* NewListModalViewModelTest.swift in Sources */,
 				8BAE16642B86C49D00656608 /* TestRequiresModelContextSync.swift in Sources */,
+				8BA0EFDD2B8AAE3800BFB9CB /* BundleViewModelTest.swift in Sources */,
 				8B8C8F942B754675007C2364 /* NewItemModalViewModelTest.swift in Sources */,
 				8B8C8FA22B86A0A2007C2364 /* ShoppingListViewModelTest.swift in Sources */,
 				8BA0EFDA2B8AABC100BFB9CB /* BundlesListViewModelTest.swift in Sources */,

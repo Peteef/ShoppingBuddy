@@ -19,7 +19,7 @@ struct BundlesNavigationView: View {
                     removal: .move(edge: .leading)
                 ))
             } else {
-                BundleView(viewModel: BundleViewModel(of: $viewModel.selectedBundle))
+                BundleView(viewModel: BundleViewModel(of: $viewModel.selectedBundle, repository: Repositories.bundleRepository))
                     .transition(.asymmetric(
                         insertion: .move(edge: .trailing),
                         removal: .move(edge: .trailing)
