@@ -1,6 +1,6 @@
 # ShoppingBuddy
 
-**Current version:** `1.3.0`
+**Current version:** `1.3.1`
 
 ## What is it?
 
