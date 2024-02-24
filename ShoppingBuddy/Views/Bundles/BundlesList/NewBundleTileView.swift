@@ -27,5 +27,5 @@ struct NewBundleTileView: View {
 
 #Preview {
     NewBundleTileView()
-        .environment(BundlesListViewModel())
+        .environment(BundlesListViewModel(repository: Repositories.bundleRepository))
 }

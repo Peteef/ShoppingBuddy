@@ -11,14 +11,15 @@ import SwiftUI
 @Observable
 final class BundlesListViewModel {
     @ObservationIgnored
-    private let repository = Repositories.bundleRepository
+    private let repository: ShoppingBundleRepository
 
     var bundles: [ShoppingBundle] = []
     var isLoading: Bool = false
     
     var isOpenNewBundleModal: Bool = false
     
-    init() {
+    init(repository: ShoppingBundleRepository) {
+        self.repository = repository
         load()
     }
 

@@ -32,5 +32,5 @@ struct EmptyBundlesListView: View {
 
 #Preview {
     EmptyBundlesListView()
-        .environment(BundlesListViewModel())
+        .environment(BundlesListViewModel(repository: Repositories.bundleRepository))
 }

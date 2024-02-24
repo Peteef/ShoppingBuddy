@@ -13,7 +13,7 @@ struct BundlesNavigationView: View {
     var body: some View {
         ZStack {
             if viewModel.selectedBundle == nil {
-                BundlesListView(viewModel: BundlesListViewModel())
+                BundlesListView(viewModel: BundlesListViewModel(repository: Repositories.bundleRepository))
                 .transition(.asymmetric(
                     insertion: .move(edge: .leading),
                     removal: .move(edge: .leading)

@@ -41,5 +41,5 @@ struct BundlesListView: View {
 }
 
 #Preview {
-    BundlesListView(viewModel: BundlesListViewModel())
+    BundlesListView(viewModel: BundlesListViewModel(repository: Repositories.bundleRepository))
 }
