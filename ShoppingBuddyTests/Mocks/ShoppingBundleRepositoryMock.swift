@@ -13,6 +13,8 @@ final class ShoppingBundleRepositoryMock: Mock, ShoppingBundleRepository {
     var whenGetAll: [ShoppingBundle] = []
     var whenGet: ShoppingBundle? = nil
     
+    var saved: [ShoppingBundle] = []
+    
     func getAll() -> [ShoppingBundle] {
         register(#function)
         return whenGetAll
@@ -25,11 +27,15 @@ final class ShoppingBundleRepositoryMock: Mock, ShoppingBundleRepository {
     
     func add(bundle: ShoppingBundle) {
         register(#function)
+        saved.append(bundle)
     }
     
     func remove(bundle: ShoppingBundle) {
         register(#function)
     }
     
-    
+    override func resetInvocations() {
+        super.resetInvocations()
+        saved = []
+    }
 }

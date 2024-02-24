@@ -11,10 +11,14 @@ import SwiftUI
 @Observable
 final class NewBundleModalViewModel {
     @ObservationIgnored
-    private let repository = Repositories.bundleRepository
+    private let repository: ShoppingBundleRepository
     
     var name: String = ""
     var showAlert: Bool = false
+    
+    init(repository: ShoppingBundleRepository) {
+        self.repository = repository
+    }
     
     var canAdd: Bool {
         return !name.trimmingCharacters(in: .whitespaces).isEmpty

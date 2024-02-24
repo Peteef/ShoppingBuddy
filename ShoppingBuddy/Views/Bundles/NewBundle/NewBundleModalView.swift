@@ -49,5 +49,5 @@ struct NewBundleModalView: View {
 }
 
 #Preview {
-    NewBundleModalView(viewModel: NewBundleModalViewModel(), isOpen: .constant(true))
+    NewBundleModalView(viewModel: NewBundleModalViewModel(repository: Repositories.bundleRepository), isOpen: .constant(true))
 }

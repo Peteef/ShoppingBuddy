@@ -27,7 +27,7 @@ struct BundlesListView: View {
         }
         .environment(viewModel)
         .sheet(isPresented: $viewModel.isOpenNewBundleModal, content: {
-            NewBundleModalView(viewModel: NewBundleModalViewModel(), isOpen: $viewModel.isOpenNewBundleModal)
+            NewBundleModalView(viewModel: NewBundleModalViewModel(repository: Repositories.bundleRepository), isOpen: $viewModel.isOpenNewBundleModal)
         })
         .onChange(of: viewModel.isOpenNewBundleModal) {
             if !viewModel.isOpenNewBundleModal {
