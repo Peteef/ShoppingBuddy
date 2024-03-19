@@ -15,3 +15,11 @@ func assertEqualInAnyOrder<T: Equatable>(_ current: Array<T>, _ other: Array<T>)
         )
     }
 }
+
+func assertThat(_ expression: Bool) {
+    XCTAssert(expression)
+}
+
+func assertNot(_ expression: Bool) {
+    XCTAssert(!expression)
+}

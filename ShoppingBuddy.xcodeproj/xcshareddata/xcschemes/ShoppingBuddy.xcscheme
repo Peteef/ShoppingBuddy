@@ -40,6 +40,17 @@
                ReferencedContainer = "container:ShoppingBuddy.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8BA0EFE12BA8FE8B00BFB9CB"
+               BuildableName = "ShoppingBuddyUITests.xctest"
+               BlueprintName = "ShoppingBuddyUITests"
+               ReferencedContainer = "container:ShoppingBuddy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -14,13 +14,17 @@ struct MainView: View {
             ListView(viewModel: ListViewModel(repository: Repositories.shoppingListRepository))
                 .tabItem {
                     Image(systemName: "cart")
+                        .accessibilityIdentifier("shoppingListNavigation")
                     Text("tabs.lists")
                 }
+                .accessibilityIdentifier("shoppingListTabView")
             BundlesNavigationView(viewModel: BundlesNavigationViewModel())
                 .tabItem {
                     Image(systemName: "basket")
+                        .accessibilityIdentifier("bundleNavigation")
                     Text("tabs.bundles")
                 }
+                .accessibilityIdentifier("bundleTabView")
         }
     }
 }
