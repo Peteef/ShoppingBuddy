@@ -21,6 +21,7 @@ struct NewItemModalView<T>: View where T: ContainingItems {
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
                 .focused($focusedContentTextField)
+                .accessibilityIdentifier("newItemContentInput")
             Button(String(localized: "newItem.createButton")) {
                 if viewModel.canAdd {
                     viewModel.addNewItem()
@@ -31,6 +32,7 @@ struct NewItemModalView<T>: View where T: ContainingItems {
             }
             .padding(.all, 16)
             .buttonStyle(.borderedProminent)
+            .accessibilityIdentifier("createItemButton")
             Spacer()
         }
         .presentationDetents([.height(180)])

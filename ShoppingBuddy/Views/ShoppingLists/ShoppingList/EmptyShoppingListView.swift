@@ -14,6 +14,7 @@ struct EmptyShoppingListView: View {
             Text("shoppingList.emptyState")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color(.systemGray2))
+                .accessibilityIdentifier("shoppingListEmptyState")
             Spacer()
         }
     }

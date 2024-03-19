@@ -22,10 +22,12 @@ struct ListView: View {
                         }
                     }
                     .onDelete(perform: viewModel.removeList)
+                    .accessibilityIdentifier("listOfShoppingLists")
                     Button(String(localized: "list.createListButton"), systemImage: "plus.circle") {
                         viewModel.isOpenNewListModal = true
                     }
                     .padding(.vertical, 8)
+                    .accessibilityIdentifier("createShoppingListRow")
                 }
                 .listRowSpacing(16)
                 .navigationTitle(String(localized: "appName"))

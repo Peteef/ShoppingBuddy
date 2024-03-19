@@ -21,6 +21,7 @@ struct NewListModalView: View {
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
                 .focused($focusedNameTextField)
+                .accessibilityIdentifier("newShoppingListNameInput")
             Button(String(localized: "newList.createButton")) {
                 if viewModel.canAdd {
                     viewModel.addNewList()
@@ -31,6 +32,7 @@ struct NewListModalView: View {
             }
             .padding(.all, 16)
             .buttonStyle(.borderedProminent)
+            .accessibilityIdentifier("createShoppingListButton")
             Spacer()
         }
         .presentationDetents([.height(180)])

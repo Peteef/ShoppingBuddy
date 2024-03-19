@@ -19,6 +19,7 @@ struct ShoppingListView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
                         .padding(.horizontal)
+                        .accessibilityIdentifier("shoppingListName")
                     Spacer()
                 }
                 if viewModel.shoppingList.items.isEmpty {
@@ -35,8 +36,11 @@ struct ShoppingListView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     ClearDoneButton()
+                        .accessibilityIdentifier("clearDoneButton")
                     AddItemButton(isOpenModal: $viewModel.isOpenNewItemModal)
+                        .accessibilityIdentifier("addItemButton")
                     AddBundleButton(isOpenModal: $viewModel.isOpenAddBundleModal)
+                        .accessibilityIdentifier("addBundleButton")
                 }
             }
             .sheet(isPresented: $viewModel.isOpenNewItemModal, content: {

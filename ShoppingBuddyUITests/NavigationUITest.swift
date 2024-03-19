@@ -8,11 +8,22 @@
 import XCTest
 
 final class NavigationUITest: XCTestCase {
-    func testNavigateTabs() {
-        // Given
-        let app = XCUIApplication()
+    var app: XCUIApplication!
+
+    override func setUpWithError() throws {
+        app = XCUIApplication()
         app.launch()
         
+        let tabBar = app.tabBars["Tab Bar"]
+        tabBar.buttons[MainIdentifiers.shoppingListNavigation].tap()
+    }
+
+    override func tearDownWithError() throws {
+        app.terminate()
+        app = nil
+    }
+    
+    func testShouldNavigateTabs() {
         // When
         let tabBar = app.tabBars["Tab Bar"]
         tabBar.buttons[MainIdentifiers.bundleNavigation].tap()

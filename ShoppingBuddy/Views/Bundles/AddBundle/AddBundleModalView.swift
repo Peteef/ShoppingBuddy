@@ -19,12 +19,14 @@ struct AddBundleModalView: View {
                     Text(bundle.name).tag(bundle)
                 }
             }
+            .accessibilityIdentifier("bundlePicker")
             Button(String(localized: "addBundle.addItemsButton")) {
                 viewModel.addItems()
                 isOpen = false
             }
             .padding(.all, 16)
             .buttonStyle(.borderedProminent)
+            .accessibilityIdentifier("addItemsFromBundleButton")
             Spacer()
         }
         .presentationDetents([.height(180)])
