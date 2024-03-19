@@ -12,9 +12,10 @@ final class AddBundleModalViewModelTest: TestRequiresModelContextSync {
     var shoppingBundleRepository = ShoppingBundleRepositoryMock()
     var viewModel: AddBundleModalViewModel!
 
-    override func tearDownWithError() throws {
+    @MainActor override func tearDownWithError() throws {
         viewModel = nil
         shoppingBundleRepository.resetInvocations()
+        cleanupStorage()
     }
 
     @MainActor func testShouldAddItemsFromBundleAndResetSelected() throws {

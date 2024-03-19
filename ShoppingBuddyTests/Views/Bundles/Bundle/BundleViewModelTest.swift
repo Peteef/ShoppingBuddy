@@ -12,9 +12,10 @@ final class BundleViewModelTest: TestRequiresModelContextSync {
     var shoppingBundleRepository = ShoppingBundleRepositoryMock()
     var viewModel: BundleViewModel!
 
-    override func tearDownWithError() throws {
+    @MainActor override func tearDownWithError() throws {
         viewModel = nil
         shoppingBundleRepository.resetInvocations()
+        cleanupStorage()
     }
 
     func testShouldLoadFromRepository() {

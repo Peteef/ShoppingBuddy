@@ -8,7 +8,7 @@
 import XCTest
 @testable import ShoppingBuddy
 
-final class NewListModalViewModelTest: XCTestCase {
+final class NewListModalViewModelTest: TestRequiresModelContextSync {
     var shoppingListRepository = ShoppingListRepositoryMock()
     var viewModel: NewListModalViewModel!
 
@@ -16,9 +16,10 @@ final class NewListModalViewModelTest: XCTestCase {
         viewModel = NewListModalViewModel(repository: shoppingListRepository)
     }
 
-    override func tearDownWithError() throws {
+    @MainActor override func tearDownWithError() throws {
         viewModel = nil
         shoppingListRepository.resetInvocations()
+        cleanupStorage()
     }
 
     func testItShouldAllowToAddList() {
