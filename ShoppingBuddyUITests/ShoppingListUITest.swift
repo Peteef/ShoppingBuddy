@@ -73,6 +73,61 @@ final class ShoppingListUITest: XCTestCase {
         assertNot(app.shoppingListItem(itemThree).exists)
     }
     
+    func testShouldCheckItemsAndClearDone() {
+        // Given
+        let itemOne = "bread"
+        let itemTwo = "milk"
+        let itemThree = "bananas"
+        
+        // When
+        addItem(itemOne)
+        addItem(itemTwo)
+        app.shoppingListItem(itemTwo).tap()
+        
+        // Then
+        app.shoppingListItem(itemOne).assertUnchecked()
+        app.shoppingListItem(itemTwo).assertChecked()
+        
+        // When
+        addItem(itemThree)
+        app.shoppingListItem(itemOne).tap()
+        
+        // Then
+        app.shoppingListItem(itemOne).assertChecked()
+        app.shoppingListItem(itemTwo).assertChecked()
+        app.shoppingListItem(itemThree).assertUnchecked()
+        
+        // When
+        app.shoppingListItem(itemThree).tap()
+        
+        // Then
+        app.shoppingListItem(itemOne).assertChecked()
+        app.shoppingListItem(itemTwo).assertChecked()
+        app.shoppingListItem(itemThree).assertChecked()
+        
+        // When
+        app.shoppingListItem(itemThree).tap()
+        
+        // Then
+        app.shoppingListItem(itemOne).assertChecked()
+        app.shoppingListItem(itemTwo).assertChecked()
+        app.shoppingListItem(itemThree).assertUnchecked()
+        
+        // When
+        app.buttons[ShoppingListIdentifiers.clearDoneButton].tap()
+        app.scrollViews.otherElements.buttons["Confirm"].tap()
+        
+        // Then
+        assertNot(app.shoppingListItem(itemOne).exists)
+        assertNot(app.shoppingListItem(itemTwo).exists)
+        assertThat(app.shoppingListItem(itemThree).exists)
+        app.shoppingListItem(itemThree).assertUnchecked()
+    }
+    
+    func testShouldAddItemsFromBundle() {
+        // TODO: Implement test once bundle logic is ready
+    }
+    
     private func addItem(_ content: String) {
         app.buttons[ShoppingListIdentifiers.addItemButton].tap()
         app.textFields[ShoppingListIdentifiers.newItemContentInput].typeText(content)

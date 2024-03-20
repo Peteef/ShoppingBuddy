@@ -8,19 +8,19 @@
 import XCTest
 
 extension XCUIApplication {
-    public func listOfShoppingListsElement(_ key: String) -> XCUIElement {
+    func listOfShoppingListsElement(_ key: String) -> XCUIElement {
         return self.otherElements[MainIdentifiers.shoppingListTabView]
             .collectionViews
             .buttons[key]
     }
     
-    public func shoppingListBackButton() -> XCUIElement {
+    func shoppingListBackButton() -> XCUIElement {
         return self.otherElements["shoppingListTabView"]
             .navigationBars["_TtGC7SwiftUI32NavigationStackHosting"]
             .buttons["🛒 ShoppingBuddy"]
     }
     
-    public func shoppingListItem(_ key: String) -> XCUIElement {
+    func shoppingListItem(_ key: String) -> XCUIElement {
         return self.otherElements["shoppingListTabView"]
             .collectionViews
             .switches[key]
