@@ -80,6 +80,6 @@ final class ShoppingListsListUITest: XCTestCase {
     
     private func removeList(_ name: String) {
         app.listOfShoppingListsElement(name).swipeLeft()
-        app.otherElements["shoppingListTabView"].collectionViews.buttons["Delete"].tap()
+        app.otherElements[MainIdentifiers.shoppingListTabView].collectionViews.buttons["Delete"].tap()
     }
 }

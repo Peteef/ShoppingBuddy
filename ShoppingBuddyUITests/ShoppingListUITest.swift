@@ -28,7 +28,7 @@ final class ShoppingListUITest: XCTestCase {
     override func tearDownWithError() throws {
         app.shoppingListBackButton().tap()
         app.listOfShoppingListsElement(shoppingListName).swipeLeft()
-        app.otherElements["shoppingListTabView"].collectionViews.buttons["Delete"].tap()
+        app.otherElements[MainIdentifiers.shoppingListTabView].collectionViews.buttons["Delete"].tap()
         
         app.terminate()
         app = nil
@@ -136,6 +136,6 @@ final class ShoppingListUITest: XCTestCase {
     
     private func removeItem(_ content: String) {
         app.shoppingListItem(content).swipeLeft()
-        app.otherElements["shoppingListTabView"].collectionViews.buttons["Delete"].tap()
+        app.otherElements[MainIdentifiers.shoppingListTabView].collectionViews.buttons["Delete"].tap()
     }
 }

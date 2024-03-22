@@ -24,6 +24,7 @@ struct BundleView: View {
                     viewModel.isOpenNewItemModal = true
                 }
                 .padding(.vertical, 4)
+                .accessibilityIdentifier("addBundleItemButton")
             }
             Spacer()
         }

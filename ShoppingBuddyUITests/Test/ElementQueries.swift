@@ -37,6 +37,12 @@ extension XCUIApplication {
     func listOfBundlesElement(_ key: String) -> XCUIElement {
         return self.buttons[key]
     }
+    
+    func bundleItem(_ key: String) -> XCUIElement {
+        return self.collectionViews
+            .cells
+            .staticTexts[key]
+    }
 }
 
 

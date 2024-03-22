@@ -14,4 +14,7 @@ struct BundleIdentifiers {
     static let createBundleButton = "createBundleButton"
     
     static let removeBundleButton = "removeBundleButton"
+    static let addBundleItemButton = "addBundleItemButton"
+    static let newItemContentInput = "newItemContentInput"
+    static let createItemButton = "createItemButton"
 }

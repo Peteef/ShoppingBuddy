@@ -35,6 +35,7 @@
 		8B66D80E2BA918EC0029BC63 /* ShoppingListsListUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66D80D2BA918EC0029BC63 /* ShoppingListsListUITest.swift */; };
 		8B66D8102BA919C10029BC63 /* ShoppingListIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66D80F2BA919C10029BC63 /* ShoppingListIdentifiers.swift */; };
 		8B7814812B2E945E00C472ED /* ClearDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7814802B2E945E00C472ED /* ClearDoneButton.swift */; };
+		8B78AF3B2BAD0CD40033CB32 /* BundleUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78AF3A2BAD0CD40033CB32 /* BundleUITest.swift */; };
 		8B8C8F942B754675007C2364 /* NewItemModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F932B754675007C2364 /* NewItemModalViewModelTest.swift */; };
 		8B8C8F982B754EDA007C2364 /* ListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F972B754EDA007C2364 /* ListViewModelTest.swift */; };
 		8B8C8F9A2B755A14007C2364 /* ShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8C8F992B755A14007C2364 /* ShoppingListRepository.swift */; };
@@ -123,6 +124,7 @@
 		8B66D80D2BA918EC0029BC63 /* ShoppingListsListUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListsListUITest.swift; sourceTree = "<group>"; };
 		8B66D80F2BA919C10029BC63 /* ShoppingListIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListIdentifiers.swift; sourceTree = "<group>"; };
 		8B7814802B2E945E00C472ED /* ClearDoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearDoneButton.swift; sourceTree = "<group>"; };
+		8B78AF3A2BAD0CD40033CB32 /* BundleUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUITest.swift; sourceTree = "<group>"; };
 		8B8C8F872B75439D007C2364 /* ShoppingBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8C8F932B754675007C2364 /* NewItemModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemModalViewModelTest.swift; sourceTree = "<group>"; };
 		8B8C8F972B754EDA007C2364 /* ListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTest.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				8B66D80D2BA918EC0029BC63 /* ShoppingListsListUITest.swift */,
 				8BAB49AE2BAA38A7006363C3 /* ShoppingListUITest.swift */,
 				8BAB49B52BACFC8D006363C3 /* BundleListUITest.swift */,
+				8B78AF3A2BAD0CD40033CB32 /* BundleUITest.swift */,
 			);
 			path = ShoppingBuddyUITests;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B78AF3B2BAD0CD40033CB32 /* BundleUITest.swift in Sources */,
 				8B66D8102BA919C10029BC63 /* ShoppingListIdentifiers.swift in Sources */,
 				8BAB49B22BAA38F5006363C3 /* ElementQueries.swift in Sources */,
 				8BAB49B82BACFD7A006363C3 /* BundleIdentifiers.swift in Sources */,
