@@ -29,7 +29,7 @@ final class NavigationUITest: XCTestCase {
         tabBar.buttons[MainIdentifiers.bundleNavigation].tap()
         
         // Then
-        assertThat(app.staticTexts[MainIdentifiers.bundleTabView].isHittable)
+        assertThat(app.addFirstBundleButton().isHittable)
         assertNot(app.otherElements[MainIdentifiers.shoppingListTabView].isHittable)
         
         // When
@@ -37,7 +37,7 @@ final class NavigationUITest: XCTestCase {
         
         // Then
         assertThat(app.otherElements[MainIdentifiers.shoppingListTabView].isHittable)
-        assertNot(app.staticTexts[MainIdentifiers.bundleTabView].isHittable)
+        assertNot(app.addFirstBundleButton().isHittable)
     }
 
 }

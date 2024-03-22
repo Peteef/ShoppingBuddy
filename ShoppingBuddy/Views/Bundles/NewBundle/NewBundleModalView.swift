@@ -21,6 +21,7 @@ struct NewBundleModalView: View {
                 .multilineTextAlignment(.center)
                 .autocorrectionDisabled()
                 .focused($focusedBundleTextField)
+                .accessibilityIdentifier("newBundleNameInput")
             Button(String(localized: "newBundle.createButton")) {
                 if viewModel.canAdd {
                     viewModel.addNewBundle()
@@ -31,6 +32,7 @@ struct NewBundleModalView: View {
             }
             .padding(.all, 16)
             .buttonStyle(.borderedProminent)
+            .accessibilityIdentifier("createBundleButton")
             Spacer()
         }
         .presentationDetents([.height(180)])

@@ -25,6 +25,7 @@ struct EmptyBundlesListView: View {
                     .frame(width: 48, height: 48)
                     .padding(.vertical, 8)
             })
+            .accessibilityIdentifier("addFirstBundleButton")
             Spacer()
         }
     }

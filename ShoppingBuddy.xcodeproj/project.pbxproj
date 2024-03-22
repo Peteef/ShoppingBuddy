@@ -48,6 +48,8 @@
 		8BAB49AF2BAA38A7006363C3 /* ShoppingListUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB49AE2BAA38A7006363C3 /* ShoppingListUITest.swift */; };
 		8BAB49B22BAA38F5006363C3 /* ElementQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB49B12BAA38F5006363C3 /* ElementQueries.swift */; };
 		8BAB49B42BAA7171006363C3 /* ElementAssertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB49B32BAA7171006363C3 /* ElementAssertions.swift */; };
+		8BAB49B62BACFC8D006363C3 /* BundleListUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB49B52BACFC8D006363C3 /* BundleListUITest.swift */; };
+		8BAB49B82BACFD7A006363C3 /* BundleIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB49B72BACFD7A006363C3 /* BundleIdentifiers.swift */; };
 		8BAE16592B86B87C00656608 /* NewListModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE16582B86B87C00656608 /* NewListModalViewModelTest.swift */; };
 		8BAE165D2B86BF5200656608 /* AddBundleModalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE165C2B86BF5200656608 /* AddBundleModalViewModelTest.swift */; };
 		8BAE165F2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE165E2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift */; };
@@ -136,6 +138,8 @@
 		8BAB49AE2BAA38A7006363C3 /* ShoppingListUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListUITest.swift; sourceTree = "<group>"; };
 		8BAB49B12BAA38F5006363C3 /* ElementQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementQueries.swift; sourceTree = "<group>"; };
 		8BAB49B32BAA7171006363C3 /* ElementAssertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementAssertions.swift; sourceTree = "<group>"; };
+		8BAB49B52BACFC8D006363C3 /* BundleListUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleListUITest.swift; sourceTree = "<group>"; };
+		8BAB49B72BACFD7A006363C3 /* BundleIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleIdentifiers.swift; sourceTree = "<group>"; };
 		8BAE16582B86B87C00656608 /* NewListModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListModalViewModelTest.swift; sourceTree = "<group>"; };
 		8BAE165C2B86BF5200656608 /* AddBundleModalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBundleModalViewModelTest.swift; sourceTree = "<group>"; };
 		8BAE165E2B86BFD300656608 /* DatabaseShoppingBundleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseShoppingBundleRepository.swift; sourceTree = "<group>"; };
@@ -319,6 +323,7 @@
 			children = (
 				8B66D8082BA911420029BC63 /* MainIdentifiers.swift */,
 				8B66D80F2BA919C10029BC63 /* ShoppingListIdentifiers.swift */,
+				8BAB49B72BACFD7A006363C3 /* BundleIdentifiers.swift */,
 			);
 			path = Identifiers;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				8BA0EFEE2BA9040300BFB9CB /* NavigationUITest.swift */,
 				8B66D80D2BA918EC0029BC63 /* ShoppingListsListUITest.swift */,
 				8BAB49AE2BAA38A7006363C3 /* ShoppingListUITest.swift */,
+				8BAB49B52BACFC8D006363C3 /* BundleListUITest.swift */,
 			);
 			path = ShoppingBuddyUITests;
 			sourceTree = "<group>";
@@ -708,11 +714,13 @@
 			files = (
 				8B66D8102BA919C10029BC63 /* ShoppingListIdentifiers.swift in Sources */,
 				8BAB49B22BAA38F5006363C3 /* ElementQueries.swift in Sources */,
+				8BAB49B82BACFD7A006363C3 /* BundleIdentifiers.swift in Sources */,
 				8BA0EFEF2BA9040300BFB9CB /* NavigationUITest.swift in Sources */,
 				8B66D80E2BA918EC0029BC63 /* ShoppingListsListUITest.swift in Sources */,
 				8BAB49AF2BAA38A7006363C3 /* ShoppingListUITest.swift in Sources */,
 				8B66D80B2BA914D70029BC63 /* Assertions.swift in Sources */,
 				8B66D8092BA911420029BC63 /* MainIdentifiers.swift in Sources */,
+				8BAB49B62BACFC8D006363C3 /* BundleListUITest.swift in Sources */,
 				8BAB49B42BAA7171006363C3 /* ElementAssertions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

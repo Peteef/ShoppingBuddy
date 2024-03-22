@@ -25,6 +25,18 @@ extension XCUIApplication {
             .collectionViews
             .switches[key]
     }
+    
+    func addFirstBundleButton() -> XCUIElement {
+        return self.buttons[BundleIdentifiers.addFirstBundleButton]
+    }
+    
+    func addBundleTile() -> XCUIElement {
+        return self.buttons[BundleIdentifiers.addBundleTile]
+    }
+    
+    func listOfBundlesElement(_ key: String) -> XCUIElement {
+        return self.buttons[key]
+    }
 }
 
 

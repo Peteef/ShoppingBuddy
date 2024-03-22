@@ -24,7 +24,6 @@ struct MainView: View {
                         .accessibilityIdentifier("bundleNavigation")
                     Text("tabs.bundles")
                 }
-                .accessibilityIdentifier("bundleTabView")
         }
     }
 }

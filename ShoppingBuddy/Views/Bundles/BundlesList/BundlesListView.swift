@@ -22,6 +22,7 @@ struct BundlesListView: View {
                         BundleTileView(of: bundle)
                     }
                     NewBundleTileView()
+                        .accessibilityIdentifier("addBundleTile")
                 }
             }
         }

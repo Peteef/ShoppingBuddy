@@ -19,6 +19,7 @@ struct BundleToolbar: View {
             }.padding()
             Spacer()
             RemoveBundleButton()
+                .accessibilityIdentifier("removeBundleButton")
         }
     }
 }

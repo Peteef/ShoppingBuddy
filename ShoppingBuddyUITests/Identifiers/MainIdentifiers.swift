@@ -11,5 +11,4 @@ struct MainIdentifiers {
     static let shoppingListNavigation = "shoppingListNavigation"
     static let bundleNavigation = "bundleNavigation"
     static let shoppingListTabView = "shoppingListTabView"
-    static let bundleTabView = "bundleTabView"
 }
