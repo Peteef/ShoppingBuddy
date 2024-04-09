@@ -125,7 +125,59 @@ final class ShoppingListUITest: XCTestCase {
     }
     
     func testShouldAddItemsFromBundle() {
-        // TODO: Implement test once bundle logic is ready
+        // Given
+        let itemOne = "bread"
+        let itemTwo = "milk"
+        let itemThree = "bananas"
+        let bundleName = "Test bundle - \(Date())"
+        
+        // When
+        let tabBar = app.tabBars["Tab Bar"]
+        tabBar.buttons[MainIdentifiers.bundleNavigation].tap()
+        
+        app.addFirstBundleButton().tap()
+        app.textFields[BundleIdentifiers.newBundleNameInput].typeText(bundleName)
+        app.buttons[BundleIdentifiers.createBundleButton].tap()
+        app.listOfBundlesElement(bundleName).tap()
+        
+        addBundleItem(itemOne)
+        addBundleItem(itemTwo)
+        addBundleItem(itemThree)
+        
+        // And
+        tabBar.buttons[MainIdentifiers.shoppingListNavigation].tap()
+        addItem(itemTwo)
+        app.shoppingListItem(itemTwo).tap()
+        
+        // And
+        addItemsFromBundle(bundleName)
+        
+        // Then
+        app.shoppingListItem(itemOne).assertUnchecked()
+        app.shoppingListItem(itemTwo).assertChecked()
+        app.shoppingListItem(itemThree).assertUnchecked()
+        
+        // When
+        app.buttons[ShoppingListIdentifiers.clearDoneButton].tap()
+        app.scrollViews.otherElements.buttons["Confirm"].tap()
+        
+        // Then
+        assertNot(app.shoppingListItem(itemTwo).exists)
+        
+        // When
+        addItemsFromBundle(bundleName)
+        
+        // Then
+        app.shoppingListItem(itemOne).assertUnchecked()
+        app.shoppingListItem(itemTwo).assertUnchecked()
+        app.shoppingListItem(itemThree).assertUnchecked()
+                
+        // And
+        tabBar.buttons[MainIdentifiers.bundleNavigation].tap()
+        app.buttons[BundleIdentifiers.removeBundleButton].tap()
+        app.otherElements["Are you sure you want to remove this bundle?"].scrollViews.otherElements.buttons["Confirm"].tap()
+        tabBar.buttons[MainIdentifiers.shoppingListNavigation].tap()
+        
     }
     
     private func addItem(_ content: String) {
@@ -137,5 +189,18 @@ final class ShoppingListUITest: XCTestCase {
     private func removeItem(_ content: String) {
         app.shoppingListItem(content).swipeLeft()
         app.otherElements[MainIdentifiers.shoppingListTabView].collectionViews.buttons["Delete"].tap()
+    }
+    
+    private func addBundleItem(_ content: String) {
+        app.buttons[BundleIdentifiers.addBundleItemButton].tap()
+        app.textFields[BundleIdentifiers.newItemContentInput].typeText(content)
+        app.buttons[BundleIdentifiers.createItemButton].tap()
+    }
+    
+    private func addItemsFromBundle(_ bundleName: String) {
+        app.buttons[ShoppingListIdentifiers.addBundleButton].tap()
+        // TODO: It should explicitely select a bundle
+        assertThat(app.staticTexts[bundleName].exists)
+        app.buttons[ShoppingListIdentifiers.addItemsFromBundleButton].tap()
     }
 }
